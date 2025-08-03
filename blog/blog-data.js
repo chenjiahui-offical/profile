@@ -14,24 +14,24 @@ const blogData = [
     },
     {
         id: 'post2',
-        title: 'Python在科研中的实用技巧',
-        date: '2024年1月10日',
+        title: 'Hell let loose的地图战术分析网站',
+        date: '2025年8月3日',
         category: '技术分享',
         categoryClass: 'tech',
-        excerpt: '分享一些在科研工作中常用的Python技巧和工具，包括数据处理、可视化和自动化脚本编写，希望能够帮助同行提高工作效率。',
-        image: 'blog/images/post2.jpg',
-        tags: ['Python', '数据分析', '科研工具'],
+        excerpt: '分享人间地狱的赛前地图部署工具',
+        image: 'blog/images/post2.png',
+        tags: ['Hell let loose', '地图分析', '部署工具'],
         featured: true
     },
     {
         id: 'post3',
-        title: '从本科到研究生的学习心得',
-        date: '2024年1月5日',
-        category: '生活感悟',
-        categoryClass: 'life',
-        excerpt: '回顾从四川大学到中科院长春应化所的求学经历，分享一些学习方法和心得体会，希望能够对正在求学路上的同学们有所帮助。',
-        image: 'blog/images/post3.jpg',
-        tags: ['学习心得', '研究生生活', '个人成长'],
+        title: 'Hell let loose的音效库网站',
+        date: '2025年8月3日',
+        category: '技术分享',
+        categoryClass: 'tech',
+        excerpt: '本文介绍了人间地狱的音效库，并为用户熟悉音效提供了测试训练',
+        image: 'blog/images/post3.png',
+        tags: ['Hell let loose', '音效库'],
         featured: true
     }
 ];
