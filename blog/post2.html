@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python在科研中的实用技巧 - 陈家辉</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 博客文章专用样式 */
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            padding-top: 120px; /* 避免被导航栏遮挡 */
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-tags {
+            margin-top: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        .article-content h2 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .article-content h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .article-content code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .article-navigation {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #3498db;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>陈家辉 - Jiahui Chen</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="../index.html#about">关于我</a></li>
+                <li><a href="../index.html#research">研究成果</a></li>
+                <li><a href="../index.html#publications">发表论文</a></li>
+                <li><a href="../index.html#blog">博客</a></li>
+                <li><a href="../index.html#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 博客文章内容 -->
+    <article class="blog-article">
+        <header class="article-header">
+            <h1 class="article-title">Python在科研中的实用技巧</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> 2024年1月10日</span>
+                <span><i class="fas fa-user"></i> 陈家辉</span>
+                <span><i class="fas fa-folder"></i> 技术分享</span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Python</span>
+                <span class="tag">数据分析</span>
+                <span class="tag">科研工具</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <!-- 文章摘要 -->
+            <p><strong>摘要：</strong>分享一些在科研工作中常用的Python技巧和工具，包括数据处理、可视化和自动化脚本编写，希望能够帮助同行提高工作效率。</p>
+
+            <!-- 正文内容 -->
+            <h2>为什么选择Python</h2>
+            <p>在科研工作中，我们经常需要处理大量的数据，进行复杂的计算和分析。Python作为一门简洁而强大的编程语言，在科研领域有着广泛的应用。它不仅语法简单易学，而且拥有丰富的科学计算库。</p>
+
+            <h2>数据处理技巧</h2>
+            
+            <h3>使用Pandas进行数据清洗</h3>
+            <p>Pandas是Python中最重要的数据处理库之一。以下是一些常用的数据清洗技巧：</p>
+            
+            <pre><code>
+import pandas as pd
+import numpy as np
+
+# 读取数据
+df = pd.read_csv('experiment_data.csv')
+
+# 处理缺失值
+df = df.dropna()  # 删除包含缺失值的行
+df = df.fillna(df.mean())  # 用均值填充缺失值
+
+# 数据类型转换
+df['temperature'] = pd.to_numeric(df['temperature'], errors='coerce')
+
+# 数据筛选
+filtered_data = df[df['temperature'] > 25]
+            </code></pre>
+
+            <h3>NumPy数组操作</h3>
+            <p>NumPy提供了高效的数组操作功能，特别适合科学计算：</p>
+            
+            <pre><code>
+import numpy as np
+
+# 创建数组
+data = np.array([1, 2, 3, 4, 5])
+
+# 数学运算
+result = np.sqrt(data)
+mean_value = np.mean(data)
+std_value = np.std(data)
+
+# 矩阵运算
+matrix_a = np.array([[1, 2], [3, 4]])
+matrix_b = np.array([[5, 6], [7, 8]])
+product = np.dot(matrix_a, matrix_b)
+            </code></pre>
+
+            <h2>数据可视化</h2>
+            
+            <h3>Matplotlib基础绘图</h3>
+            <p>Matplotlib是Python中最常用的绘图库，可以创建各种类型的图表：</p>
+            
+            <pre><code>
+import matplotlib.pyplot as plt
+
+# 基础线图
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, label='sin(x)')
+plt.xlabel('X轴')
+plt.ylabel('Y轴')
+plt.title('正弦函数图')
+plt.legend()
+plt.grid(True)
+plt.show()
+            </code></pre>
+
+            <h3>Seaborn统计图表</h3>
+            <p>Seaborn基于Matplotlib，提供了更美观的统计图表：</p>
+            
+            <pre><code>
+import seaborn as sns
+
+# 设置样式
+sns.set_style("whitegrid")
+
+# 散点图
+plt.figure(figsize=(8, 6))
+sns.scatterplot(data=df, x='temperature', y='pressure')
+plt.title('温度与压力关系')
+plt.show()
+            </code></pre>
+
+            <h2>自动化脚本编写</h2>
+            
+            <h3>批量文件处理</h3>
+            <p>在科研中经常需要处理大量的实验数据文件，Python可以帮助我们自动化这个过程：</p>
+            
+            <pre><code>
+import os
+import glob
+
+def process_data_files(directory):
+    """批量处理数据文件"""
+    files = glob.glob(os.path.join(directory, '*.csv'))
+    
+    for file in files:
+        df = pd.read_csv(file)
+        # 进行数据处理
+        processed_df = df.groupby('category').mean()
+        
+        # 保存处理后的数据
+        output_file = file.replace('.csv', '_processed.csv')
+        processed_df.to_csv(output_file)
+        print(f"处理完成: {file}")
+
+# 使用示例
+process_data_files('./data/')
+            </code></pre>
+
+            <h2>科学计算库推荐</h2>
+            
+            <h3>SciPy科学计算</h3>
+            <p>SciPy提供了丰富的科学计算功能，包括优化、积分、插值等：</p>
+            
+            <pre><code>
+from scipy import optimize, integrate
+from scipy.interpolate import interp1d
+
+# 函数优化
+def objective_function(x):
+    return x**2 + 2*x + 1
+
+result = optimize.minimize(objective_function, x0=0)
+print(f"最小值: {result.fun}, 最优解: {result.x}")
+
+# 数值积分
+def integrand(x):
+    return x**2
+
+integral_result, error = integrate.quad(integrand, 0, 1)
+print(f"积分结果: {integral_result}")
+            </code></pre>
+
+            <blockquote>
+                掌握这些Python技巧不仅能提高科研效率，还能让我们更专注于科学问题本身，而不是被繁琐的数据处理工作所困扰。
+            </blockquote>
+
+            <h2>实际应用案例</h2>
+            <p>在我的电极微环境识别项目中，Python发挥了重要作用。从图像预处理到模型训练，再到结果分析，整个流程都离不开Python的支持。特别是在处理大量电镜图像时，Python的批处理能力大大提高了工作效率。</p>
+
+            <h2>总结</h2>
+            <p>Python在科研中的应用非常广泛，从数据处理到机器学习，从可视化到自动化，都有相应的工具和库支持。掌握这些技巧不仅能提高工作效率，还能为科研工作带来新的可能性。希望这些分享对大家有所帮助。</p>
+        </div>
+
+        <!-- 文章导航 -->
+        <nav class="article-navigation">
+            <a href="post1.html" class="nav-link">← 上一篇</a>
+            <a href="index.html" class="nav-link">返回博客列表</a>
+            <a href="post3.html" class="nav-link">下一篇 →</a>
+        </nav>
+    </article>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 陈家辉. 保留所有权利.</p>
+            <p>本网站使用静态技术构建，专注于学术交流与知识分享。</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

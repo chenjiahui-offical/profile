@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈家辉 - 科研人员个人主页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2> 陈家辉 - Jiahui Chen </h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#research">研究成果</a></li>
+                <li><a href="#publications">发表论文</a></li>
+                <li><a href="#blog">博客</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>你好，我是 <span class="highlight">陈家辉</span></h1>
+                    <p class="hero-subtitle">高分子化学 科研人员</p>
+                    <p class="hero-description">
+                        专注于 计算机与高分子化学学科交叉，致力于通过科学研究推动 高分子化学 的发展，
+                        同时通过博客分享知识和见解。
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#research" class="btn btn-primary">查看研究</a>
+                        <a href="#blog" class="btn btn-secondary">阅读博客</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="resource\人像照.jpg" alt="个人照片">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 关于我 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>学术背景</h3>
+
+                    <div class="education-timeline">
+                        <div class="education-item">
+                            <h4>本科阶段 (2020-2025)</h4>
+                            <p class="education-institution">四川大学高分子科学与工程学院 - 王宇研究员课题组</p>
+                            <p class="education-description">
+                                本科阶段在四川大学李乙文教授课题组从事科研训练，获大学生创新创业大赛国家级项目，
+                                后在王宇研究员课题组进行毕业论文设计（基于深度学习的电极微环境识别及应用研究）并申请发明专利一项，
+                            </p>
+                        </div>
+
+                        <div class="education-item">
+                            <h4>硕士阶段 (2024-至今)</h4>
+                            <p class="education-institution">中国科学技术大学长春应用化学研究所 - 陈学思院士课题组</p>
+                            <p class="education-description">
+                                无
+                            </p>
+                        </div>
+
+                        <div class="education-item">
+                            <h4>博士阶段 (?-?)</h4>
+                            <p class="education-institution">中国科学技术大学长春应用化学研究所 - 陈学思院士课题组</p>
+                            <p class="education-description">
+                                无
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>研究兴趣</h3>
+                    <ul class="research-interests">
+                        <li>[研究兴趣1]</li>
+                        <li>[研究兴趣2]</li>
+                        <li>[研究兴趣3]</li>
+                        <li>[研究兴趣4]</li>
+                    </ul>
+
+                    <h3>技能专长</h3>
+                    <div class="skills">
+                        <span class="skill-tag">计算机</span>
+                        <span class="skill-tag">跆拳道</span>
+                        <span class="skill-tag">竹笛</span>
+
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h4>基金项目</h4>
+                        <span class="stat-number">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>发表论文</h4>
+                        <span class="stat-number">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>申请专利</h4>
+                        <span class="stat-number">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>研究项目</h4>
+                        <span class="stat-number">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>学术会议</h4>
+                        <span class="stat-number">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>H-index</h4>
+                        <span class="stat-number">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究成果 -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">研究成果</h2>
+            <div class="research-grid">
+                <div class="research-item">
+                    <div class="research-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>电极微环境电镜结构识别</h3>
+                    <p>通过深度学习CNN卷积神经网络定量识别电极环境中的PTFE纤维以及活性颗粒含量及分布情况,
+                        并开发软件及MCPserver。
+                    </p>
+                    <div class="research-tags">
+                        <span class="tag">软件专利</span>
+                        <span class="tag">神经网络</span>
+                        <span class="tag">计算机视觉</span>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>[项目名称2]</h3>
+                    <p>[项目简介，描述研究内容和主要成果]</p>
+                    <div class="research-tags">
+                        <span class="tag">[标签1]</span>
+                        <span class="tag">[标签2]</span>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>[项目名称3]</h3>
+                    <p>[项目简介，描述研究内容和主要成果]</p>
+                    <div class="research-tags">
+                        <span class="tag">[标签1]</span>
+                        <span class="tag">[标签2]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发表论文 -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">发表论文</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-content">
+                        <h4>深度学习在生物医学图像分析中的应用研究</h4>
+                        <p class="pub-authors">[姓名], 张三, 李四</p>
+                        <p class="pub-journal"><em>计算机学报</em>, Vol. 47, pp. 123-135</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-content">
+                        <h4>基于机器学习的蛋白质结构预测方法</h4>
+                        <p class="pub-authors">王五, [姓名], 赵六</p>
+                        <p class="pub-journal"><em>Nature Biotechnology</em>, Vol. 42, pp. 456-468</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-content">
+                        <h4>多模态数据融合在精准医疗中的应用</h4>
+                        <p class="pub-authors">[姓名], 陈七, 刘八</p>
+                        <p class="pub-journal"><em>IEEE Trans. Biomed. Eng.</em>, Vol. 71, pp. 789-801</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-content">
+                        <h4>神经网络优化算法的理论分析与实践</h4>
+                        <p class="pub-authors">孙九, [姓名], 周十</p>
+                        <p class="pub-journal"><em>J. Mach. Learn. Res.</em>, Vol. 24, pp. 1-28</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-content">
+                        <h4>大规模生物数据的分布式处理框架</h4>
+                        <p class="pub-authors">[姓名], 吴十一, 郑十二</p>
+                        <p class="pub-journal"><em>Bioinformatics</em>, Vol. 39, pp. 2345-2356</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-content">
+                        <h4>[论文标题6]</h4>
+                        <p class="pub-authors">[作者列表6]</p>
+                        <p class="pub-journal"><em>[期刊名称6]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2022</div>
+                    <div class="pub-content">
+                        <h4>[论文标题7]</h4>
+                        <p class="pub-authors">[作者列表7]</p>
+                        <p class="pub-journal"><em>[期刊名称7]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2022</div>
+                    <div class="pub-content">
+                        <h4>[论文标题8]</h4>
+                        <p class="pub-authors">[作者列表8]</p>
+                        <p class="pub-journal"><em>[期刊名称8]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2022</div>
+                    <div class="pub-content">
+                        <h4>[论文标题9]</h4>
+                        <p class="pub-authors">[作者列表9]</p>
+                        <p class="pub-journal"><em>[期刊名称9]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2021</div>
+                    <div class="pub-content">
+                        <h4>[论文标题10]</h4>
+                        <p class="pub-authors">[作者列表10]</p>
+                        <p class="pub-journal"><em>[期刊名称10]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2021</div>
+                    <div class="pub-content">
+                        <h4>[论文标题11]</h4>
+                        <p class="pub-authors">[作者列表11]</p>
+                        <p class="pub-journal"><em>[期刊名称11]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2021</div>
+                    <div class="pub-content">
+                        <h4>[论文标题12]</h4>
+                        <p class="pub-authors">[作者列表12]</p>
+                        <p class="pub-journal"><em>[期刊名称12]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2020</div>
+                    <div class="pub-content">
+                        <h4>[论文标题13]</h4>
+                        <p class="pub-authors">[作者列表13]</p>
+                        <p class="pub-journal"><em>[期刊名称13]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2020</div>
+                    <div class="pub-content">
+                        <h4>[论文标题14]</h4>
+                        <p class="pub-authors">[作者列表14]</p>
+                        <p class="pub-journal"><em>[期刊名称14]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2020</div>
+                    <div class="pub-content">
+                        <h4>[论文标题15]</h4>
+                        <p class="pub-authors">[作者列表15]</p>
+                        <p class="pub-journal"><em>[期刊名称15]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2019</div>
+                    <div class="pub-content">
+                        <h4>[论文标题16]</h4>
+                        <p class="pub-authors">[作者列表16]</p>
+                        <p class="pub-journal"><em>[期刊名称16]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2019</div>
+                    <div class="pub-content">
+                        <h4>[论文标题17]</h4>
+                        <p class="pub-authors">[作者列表17]</p>
+                        <p class="pub-journal"><em>[期刊名称17]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2019</div>
+                    <div class="pub-content">
+                        <h4>[论文标题18]</h4>
+                        <p class="pub-authors">[作者列表18]</p>
+                        <p class="pub-journal"><em>[期刊名称18]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2018</div>
+                    <div class="pub-content">
+                        <h4>[论文标题19]</h4>
+                        <p class="pub-authors">[作者列表19]</p>
+                        <p class="pub-journal"><em>[期刊名称19]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="pub-year">2018</div>
+                    <div class="pub-content">
+                        <h4>[论文标题20]</h4>
+                        <p class="pub-authors">[作者列表20]</p>
+                        <p class="pub-journal"><em>[期刊名称20]</em>, Vol. [卷号], pp. [页码]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">PDF</a>
+                            <a href="#" class="pub-link">DOI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 博客 -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">知识分享博客</h2>
+            <div class="blog-grid" id="blog-grid">
+                <!-- 博客文章将通过JavaScript动态加载 -->
+            </div>
+            <br>
+            <br>
+            <div class="blog-more">
+                <a href="blog/index.html" class="btn btn-primary">查看所有博客文章</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>邮箱</h4>
+                            <p>1552308626@qq.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>工作单位</h4>
+                            <p>中国科学技术大学<br>长春应用化学研究所</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>地址</h4>
+                            <p>九江 江西</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h4>学术社交</h4>
+                    <div class="social-icons">
+                        <a href="https://orcid.org/my-orcid?orcid=0009-0002-5046-2214" class="social-link"><i class="fab fa-orcid"></i> ORCID</a>
+                        <a href="#" class="social-link"><i class="fab fa-google"></i> Google Scholar</a>
+                        <a href="#" class="social-link"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/chenjiahui-offical" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 陈家辉. 保留所有权利.</p>
+            <p>本网站使用静态技术构建，专注于学术交流与知识分享。</p>
+        </div>
+    </footer>
+
+    <script src="blog/blog-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // 动态加载博客内容
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeaturedBlogPosts();
+        });
+
+        function loadFeaturedBlogPosts() {
+            const blogGrid = document.getElementById('blog-grid');
+            if (!blogGrid) return;
+
+            const featuredPosts = getFeaturedPosts();
+            
+            blogGrid.innerHTML = featuredPosts.map(post => `
+                <article class="blog-post">
+                    <div class="post-image">
+                        ${post.image ? 
+                            `<img src="${post.image}" alt="${post.title}" onerror="this.style.display='none'">` : 
+                            `<div class="post-image-placeholder">
+                                <i class="fas fa-blog"></i>
+                            </div>`
+                        }
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">${post.date}</span>
+                            <span class="post-category">${post.category}</span>
+                        </div>
+                        <h3><a href="blog/${post.id}.html">${post.title}</a></h3>
+                        <p>${post.excerpt}</p>
+                        <a href="blog/${post.id}.html" class="read-more">阅读更多 →</a>
+                    </div>
+                </article>
+            `).join('');
+        }
+    </script>
+</body>
+
+</html>

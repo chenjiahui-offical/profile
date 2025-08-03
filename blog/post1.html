@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度学习在电极微环境识别中的应用 - 陈家辉</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 博客文章专用样式 */
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            padding-top: 120px; /* 避免被导航栏遮挡 */
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-tags {
+            margin-top: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        .article-content h2 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .article-content h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .article-content code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .article-navigation {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #3498db;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>陈家辉 - Jiahui Chen</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="../index.html#about">关于我</a></li>
+                <li><a href="../index.html#research">研究成果</a></li>
+                <li><a href="../index.html#publications">发表论文</a></li>
+                <li><a href="../index.html#blog">博客</a></li>
+                <li><a href="../index.html#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 博客文章内容 -->
+    <article class="blog-article">
+        <header class="article-header">
+            <h1 class="article-title">深度学习在电极微环境识别中的应用</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> 2024年1月15日</span>
+                <span><i class="fas fa-user"></i> 陈家辉</span>
+                <span><i class="fas fa-folder"></i> 科研心得</span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">深度学习</span>
+                <span class="tag">计算机视觉</span>
+                <span class="tag">电极材料</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <!-- 文章摘要 -->
+            <p><strong>摘要：</strong>本文介绍了如何使用CNN卷积神经网络来识别电极环境中的PTFE纤维和活性颗粒，分享了在毕业论文设计过程中的技术实现和经验总结。</p>
+
+            <!-- 正文内容 -->
+            <h2>研究背景</h2>
+            <p>在电极材料的研究中，准确识别和定量分析电极微环境中的各种组分分布是一个重要的技术挑战。传统的人工分析方法不仅耗时耗力，而且主观性较强，难以保证结果的一致性和准确性。</p>
+            
+            <p>在王宇研究员的指导下，我开始探索使用深度学习技术来解决这一问题。通过CNN卷积神经网络，我们可以自动识别电镜图像中的PTFE纤维和活性颗粒，并进行定量分析。</p>
+
+            <h2>技术实现</h2>
+            
+            <h3>数据预处理</h3>
+            <p>首先需要对电镜图像进行预处理，包括图像增强、噪声去除和标准化等步骤。这一步骤对于提高模型的识别准确率至关重要。</p>
+            
+            <h3>模型架构设计</h3>
+            <p>我们采用了经典的CNN架构，并针对电极材料的特点进行了优化。模型主要包括卷积层、池化层和全连接层，能够有效提取图像特征并进行分类。</p>
+            
+            <!-- 代码示例 -->
+            <h2>核心代码实现</h2>
+            <pre><code>
+import tensorflow as tf
+from tensorflow.keras import layers, models
+
+def create_electrode_recognition_model():
+    model = models.Sequential([
+        layers.Conv2D(32, (3, 3), activation='relu', input_shape=(224, 224, 3)),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.Flatten(),
+        layers.Dense(64, activation='relu'),
+        layers.Dense(3, activation='softmax')  # PTFE、活性颗粒、背景
+    ])
+    
+    model.compile(optimizer='adam',
+                  loss='categorical_crossentropy',
+                  metrics=['accuracy'])
+    
+    return model
+            </code></pre>
+
+            <h2>实验结果与分析</h2>
+            <p>经过大量的训练和测试，我们的模型在电极微环境识别任务上取得了良好的效果。识别准确率达到了90%以上，大大提高了分析效率。</p>
+
+            <blockquote>
+                通过这个项目，我深刻体会到了跨学科研究的魅力。将计算机技术应用到高分子化学领域，不仅解决了实际问题，也为我后续的研究方向奠定了基础。
+            </blockquote>
+
+            <h2>软件开发与专利申请</h2>
+            <p>基于这一研究成果，我们开发了相应的软件工具，并申请了发明专利。这不仅验证了技术的实用性，也为后续的产业化应用提供了可能。</p>
+
+            <h2>总结与展望</h2>
+            <p>这个项目让我认识到了深度学习在材料科学领域的巨大潜力。未来，我希望能够继续在这个方向上深入研究，探索更多的应用场景，为高分子化学的发展贡献自己的力量。</p>
+        </div>
+
+        <!-- 文章导航 -->
+        <nav class="article-navigation">
+            <a href="#" class="nav-link" style="visibility: hidden;">← 上一篇</a>
+            <a href="index.html" class="nav-link">返回博客列表</a>
+            <a href="post2.html" class="nav-link">下一篇 →</a>
+        </nav>
+    </article>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 陈家辉. 保留所有权利.</p>
+            <p>本网站使用静态技术构建，专注于学术交流与知识分享。</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

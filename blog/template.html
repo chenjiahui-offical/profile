@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[文章标题] - 陈家辉</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 博客文章专用样式 */
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            padding-top: 120px; /* 避免被导航栏遮挡 */
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-tags {
+            margin-top: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        .article-content h2 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .article-content h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .article-content code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .article-navigation {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #3498db;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>陈家辉 - Jiahui Chen</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="../index.html#about">关于我</a></li>
+                <li><a href="../index.html#research">研究成果</a></li>
+                <li><a href="../index.html#publications">发表论文</a></li>
+                <li><a href="../index.html#blog">博客</a></li>
+                <li><a href="../index.html#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 博客文章内容 -->
+    <article class="blog-article">
+        <header class="article-header">
+            <h1 class="article-title">[文章标题]</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> [发布日期]</span>
+                <span><i class="fas fa-user"></i> 陈家辉</span>
+                <span><i class="fas fa-folder"></i> [分类]</span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">[标签1]</span>
+                <span class="tag">[标签2]</span>
+                <span class="tag">[标签3]</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <!-- 文章摘要 -->
+            <p><strong>摘要：</strong>[文章摘要，简要介绍文章的主要内容和观点]</p>
+
+            <!-- 正文内容 -->
+            <h2>引言</h2>
+            <p>[引言内容，介绍背景和研究动机]</p>
+
+            <h2>主要内容</h2>
+            <p>[主要内容段落1]</p>
+            
+            <h3>子标题1</h3>
+            <p>[子内容1]</p>
+            
+            <h3>子标题2</h3>
+            <p>[子内容2]</p>
+            
+            <!-- 代码示例 -->
+            <h2>代码示例</h2>
+            <pre><code>
+# Python代码示例
+def example_function():
+    print("这是一个示例函数")
+    return True
+            </code></pre>
+
+            <!-- 引用 -->
+            <blockquote>
+                这是一个引用示例，可以用来引用重要的观点或他人的话语。
+            </blockquote>
+
+            <h2>总结</h2>
+            <p>[总结内容，概括文章的主要观点和结论]</p>
+        </div>
+
+        <!-- 文章导航 -->
+        <nav class="article-navigation">
+            <a href="[上一篇文章链接]" class="nav-link">← 上一篇</a>
+            <a href="index.html" class="nav-link">返回博客列表</a>
+            <a href="[下一篇文章链接]" class="nav-link">下一篇 →</a>
+        </nav>
+    </article>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 陈家辉. 保留所有权利.</p>
+            <p>本网站使用静态技术构建，专注于学术交流与知识分享。</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
