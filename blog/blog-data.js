@@ -3,6 +3,18 @@
 // 文章按时间从新到旧排列
 const blogData = [
     {
+        id: 'post5',
+        title: '自注意力机制：理解现代AI大模型的核心',
+        date: '2025年8月9日',
+        dateSort: '2025-08-09',
+        category: '科研心得',
+        categoryClass: 'research',
+        excerpt: '本文深入浅出地介绍自注意力机制的核心概念与工作原理，以通俗易懂的方式帮助读者理解现代AI大模型的关键技术。从人类阅读策略的类比出发，详细阐述了自注意力机制和多头注意力机制的设计原理与实现方式。',
+        image: 'blog/images/post5.png',
+        tags: ['深度学习', '自注意力机制', 'QKV', 'Transformer'],
+        featured: true
+    },
+    {
         id: 'post4',
         title: 'Hell let loose的智能驾驶路线规划',
         date: '2025年8月5日',
