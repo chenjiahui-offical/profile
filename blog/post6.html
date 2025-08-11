@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f8a5b12ed5201a9a2bfea3042d7c73d8";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-2025学年研究生课程时间表 - 陈家辉</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 博客文章专用样式 */
+        .blog-article {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            padding-top: 120px;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-tags {
+            margin-top: 1rem;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        /* 课程表样式 */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 11px;
+        }
+
+        .schedule-table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        .time-slot {
+            background-color: #e8f5e8;
+            font-weight: bold;
+            width: 80px;
+        }
+
+        .period-header {
+            background-color: #2196F3;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* 课程颜色 */
+        .course-public {
+            background-color: #FFE0B2;
+            color: #E65100;
+        }
+
+        .course-basic {
+            background-color: #E1F5FE;
+            color: #0277BD;
+        }
+
+        .course-elective {
+            background-color: #E8F5E8;
+            color: #388E3C;
+        }
+
+        .course-mooc {
+            background-color: #F3E5F5;
+            color: #7B1FA2;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+
+        .empty-slot {
+            background-color: #f9f9f9;
+            color: #ccc;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .stats-table th,
+        .stats-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .stats-table th {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .total-row {
+            background-color: #f0f8ff;
+            font-weight: bold;
+        }
+
+        .note-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .article-navigation {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #3498db;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>陈家辉 - Jiahui Chen</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="../index.html#about">关于我</a></li>
+                <li><a href="../index.html#research">研究成果</a></li>
+                <li><a href="../index.html#publications">发表论文</a></li>
+                <li><a href="../index.html#blog">博客</a></li>
+                <li><a href="../index.html#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 博客文章内容 -->
+    <article class="blog-article">
+        <header class="article-header">
+            <h1 class="article-title">2024-2025学年研究生课程时间表</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> 2025年8月11日</span>
+                <span><i class="fas fa-user"></i> 陈家辉</span>
+                <span><i class="fas fa-folder"></i> 生活感悟</span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">课程安排</span>
+                <span class="tag">研究生</span>
+                <span class="tag">时间管理</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <!-- 文章摘要 -->
+            <p><strong>摘要：</strong>本文详细记录了2024-2025学年研究生课程的时间安排，包括公共课程、学科基础课程、专业选修课程等各类课程的具体时间表，以及学分统计和课程状态分析。</p>
+
+            <div class="note-box">
+                <strong>说明：</strong>本时间表仅显示当前学期已安排的课程（高新校区），应化校区课程将在后续学期安排。
+            </div>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2">时间段</th>
+                        <th rowspan="2">节次</th>
+                        <th colspan="6">工作日</th>
+                        <th>周末</th>
+                    </tr>
+                    <tr>
+                        <th>周一</th>
+                        <th>周二</th>
+                        <th>周三</th>
+                        <th>周四</th>
+                        <th>周五</th>
+                        <th>周六</th>
+                        <th>周日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 上午 1-5节 -->
+                    <tr>
+                        <td rowspan="5" class="period-header">上午</td>
+                        <td class="time-slot">第1节<br>8:00-8:45</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td rowspan="5" class="course-elective">
+                            生物膜和脂类组学概论<br>CHEM6433P.01<br><small>2-9周<br>周六1-5节</small>
+                        </td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第2节<br>8:55-9:40</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第3节<br>10:00-10:45</td>
+                        <td rowspan="3" class="course-basic">高等高分子化学<br>CHEM6018P<br><small>2-14周<br>周一3-5节</small></td>
+                        <td class="empty-slot">-</td>
+                        <td rowspan="5" class="course-elective">
+                            有机合成化学B<br>CHEM6405P.01<br><small>2-17周<br>周三3-7节</small>
+                        </td>
+                        <td rowspan="3" class="course-public">自然辩证法概论<br>PHIL6101U.13<br><small>8-13周<br>周四3-5节</small>
+                        </td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第4节<br>10:55-11:40</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第5节<br>11:50-12:35</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+
+                    <!-- 下午 6-10节 -->
+                    <tr>
+                        <td rowspan="5" class="period-header">下午</td>
+                        <td class="time-slot">第6节<br>14:00-14:45</td>
+                        <td rowspan="2" class="course-public">学术交流英语<br>FORL6103U.09<br><small>2-18周<br>周一6-7节</small>
+                        </td>
+                        <td rowspan="5" class="course-basic">功能高分子<br>CHEM6019P.03<br><small>2-17周<br>周二6-10节</small>
+                        </td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第7节<br>14:55-15:40</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第8节<br>16:00-16:45</td>
+                        <td rowspan="3" class="course-elective">电子密度泛函理论<br>CHEM6432P<br><small>2-18周<br>周一8-10节</small>
+                        </td>
+                        <td class="empty-slot">-</td>
+                        <td rowspan="3" class="course-public">
+                            新时代中国特色社会主义理论与实践<br>MARX6102U.08<br><small>8-18周<br>周四8-10节</small></td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第9节<br>16:55-17:40</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第10节<br>17:50-18:35</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+
+                    <!-- 晚上 11-13节 -->
+                    <tr>
+                        <td rowspan="3" class="period-header">晚上</td>
+                        <td class="time-slot">第11节<br>19:00-19:45</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td rowspan="2" class="course-mooc">
+                            化学实验安全知识<br>CHEM6400P<br><small>2-18周<br>周五11-12节<br>(MOOC)</small></td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第12节<br>19:55-20:40</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">第13节<br>20:50-21:35</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                        <td class="empty-slot">-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 图例 -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color course-public"></div>
+                    <span>公共课程</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color course-basic"></div>
+                    <span>学科基础课程</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color course-elective"></div>
+                    <span>专业选修课程</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color course-mooc"></div>
+                    <span>MOOC课程</span>
+                </div>
+            </div>
+
+            <!-- 学分统计 -->
+            <h2 style="text-align: center; margin-top: 40px;">学分统计分析</h2>
+
+            <div class="stats-container">
+                <div>
+                    <h3>当前学期学分统计</h3>
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>课程类型</th>
+                                <th>课程数量</th>
+                                <th>学分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>公共课程</td>
+                                <td>3门</td>
+                                <td>5学分</td>
+                            </tr>
+                            <tr>
+                                <td>学科基础课程</td>
+                                <td>2门</td>
+                                <td>6学分</td>
+                            </tr>
+                            <tr>
+                                <td>专业选修课程</td>
+                                <td>4门</td>
+                                <td>10学分</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>合计</td>
+                                <td>9门</td>
+                                <td>21学分</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>课程状态统计</h3>
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>状态</th>
+                                <th>课程数量</th>
+                                <th>学分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>已安排课程</td>
+                                <td>9门</td>
+                                <td>21学分</td>
+                            </tr>
+                            <tr>
+                                <td>免修课程</td>
+                                <td>2门</td>
+                                <td>4学分</td>
+                            </tr>
+                            <tr>
+                                <td>待安排课程(应化)</td>
+                                <td>6门</td>
+                                <td>18学分</td>
+                            </tr>
+                            <tr>
+                                <td>未选课程</td>
+                                <td>1门</td>
+                                <td>2学分</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>总计</td>
+                                <td>18门</td>
+                                <td>45学分</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 硕士期间总学分统计 -->
+            <div class="stats-container" style="margin-top: 30px;">
+                <div>
+                    <h3>硕士期间总学分分布</h3>
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>课程类型</th>
+                                <th>课程数量</th>
+                                <th>学分</th>
+                                <th>占比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>公共课程</td>
+                                <td>5门</td>
+                                <td>9学分</td>
+                                <td>25.7%</td>
+                            </tr>
+                            <tr>
+                                <td>学科基础课程</td>
+                                <td>4门</td>
+                                <td>12学分</td>
+                                <td>34.3%</td>
+                            </tr>
+                            <tr>
+                                <td>专业基础课程</td>
+                                <td>1门</td>
+                                <td>4学分</td>
+                                <td>11.4%</td>
+                            </tr>
+                            <tr>
+                                <td>专业选修课程</td>
+                                <td>3门</td>
+                                <td>9学分</td>
+                                <td>25.7%</td>
+                            </tr>
+                            <tr>
+                                <td>MOOC课程</td>
+                                <td>1门</td>
+                                <td>1学分</td>
+                                <td>2.9%</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>硕士总计</strong></td>
+                                <td><strong>14门</strong></td>
+                                <td><strong>35学分</strong></td>
+                                <td><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>博士期间总学分分布</h3>
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>课程类型</th>
+                                <th>课程数量</th>
+                                <th>学分</th>
+                                <th>占比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>硕士阶段课程</td>
+                                <td>14门</td>
+                                <td>35学分</td>
+                                <td>81.4%</td>
+                            </tr>
+                            <tr>
+                                <td>博士公共课程</td>
+                                <td>1门</td>
+                                <td>2学分</td>
+                                <td>4.7%</td>
+                            </tr>
+                            <tr>
+                                <td>博士专业课程</td>
+                                <td>3门</td>
+                                <td>8学分</td>
+                                <td>14.0%</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>博士总计</strong></td>
+                                <td><strong>18门</strong></td>
+                                <td><strong>45学分</strong></td>
+                                <td><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 详细课程清单 -->
+            <div style="margin-top: 40px;">
+                <h3 style="text-align: center;">详细课程清单</h3>
+                <div class="stats-container">
+                    <div>
+                        <h4>硕士阶段课程 (35学分)</h4>
+                        <table class="stats-table" style="font-size: 11px;">
+                            <thead>
+                                <tr>
+                                    <th>类型</th>
+                                    <th>课程名称</th>
+                                    <th>学分</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #FFE0B2;">
+                                    <td>公共</td>
+                                    <td>新时代中国特色社会主义理论与实践</td>
+                                    <td>2</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #FFE0B2;">
+                                    <td>公共</td>
+                                    <td>自然辩证法概论</td>
+                                    <td>1</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #FFE0B2;">
+                                    <td>公共</td>
+                                    <td>研究生综合英语</td>
+                                    <td>2</td>
+                                    <td>免修</td>
+                                </tr>
+                                <tr style="background-color: #FFE0B2;">
+                                    <td>公共</td>
+                                    <td>学术交流英语</td>
+                                    <td>2</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #FFE0B2;">
+                                    <td>公共</td>
+                                    <td>科技论文写作</td>
+                                    <td>2</td>
+                                    <td>待免修</td>
+                                </tr>
+                                <tr style="background-color: #E1F5FE;">
+                                    <td>学科基础</td>
+                                    <td>功能高分子</td>
+                                    <td>4</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #E1F5FE;">
+                                    <td>学科基础</td>
+                                    <td>聚合物结构与性能</td>
+                                    <td>4</td>
+                                    <td>待安排</td>
+                                </tr>
+                                <tr style="background-color: #E1F5FE;">
+                                    <td>学科基础</td>
+                                    <td>高等高分子化学</td>
+                                    <td>2</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #E1F5FE;">
+                                    <td>学科基础</td>
+                                    <td>谱学成像分析</td>
+                                    <td>2</td>
+                                    <td>待安排</td>
+                                </tr>
+                                <tr style="background-color: #F3E5F5;">
+                                    <td>专业基础</td>
+                                    <td>计算模拟与方法学</td>
+                                    <td>4</td>
+                                    <td>待安排</td>
+                                </tr>
+                                <tr style="background-color: #E8F5E8;">
+                                    <td>专业选修</td>
+                                    <td>电子密度泛函理论及应用</td>
+                                    <td>3</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #E8F5E8;">
+                                    <td>专业选修</td>
+                                    <td>有机合成化学B</td>
+                                    <td>4</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #E8F5E8;">
+                                    <td>专业选修</td>
+                                    <td>生物膜和脂类组学概论</td>
+                                    <td>2</td>
+                                    <td>已安排</td>
+                                </tr>
+                                <tr style="background-color: #F3E5F5;">
+                                    <td>MOOC</td>
+                                    <td>化学实验安全知识</td>
+                                    <td>1</td>
+                                    <td>已安排</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <h4>博士阶段新增课程 (10学分)</h4>
+                        <table class="stats-table" style="font-size: 11px;">
+                            <thead>
+                                <tr>
+                                    <th>类型</th>
+                                    <th>课程名称</th>
+                                    <th>学分</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #FFF3E0;">
+                                    <td>博士公共</td>
+                                    <td>中国马克思主义与当代</td>
+                                    <td>2</td>
+                                    <td>未选中</td>
+                                </tr>
+                                <tr style="background-color: #FFF3E0;">
+                                    <td>博士专业</td>
+                                    <td>生物高分子材料</td>
+                                    <td>4</td>
+                                    <td>待安排</td>
+                                </tr>
+                                <tr style="background-color: #FFF3E0;">
+                                    <td>博士专业</td>
+                                    <td>现代分析测试方法的应用</td>
+                                    <td>2</td>
+                                    <td>待安排</td>
+                                </tr>
+                                <tr style="background-color: #FFF3E0;">
+                                    <td>博士专业</td>
+                                    <td>通用高分子材料</td>
+                                    <td>2</td>
+                                    <td>待安排</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td colspan="2"><strong>博士新增小计</strong></td>
+                                    <td><strong>10学分</strong></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td colspan="2"><strong>博士期间总计</strong></td>
+                                    <td><strong>45学分</strong></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h3>重要说明：</h3>
+                <ul>
+                    <li><strong>当前安排：</strong>仅显示高新校区已安排时间的课程</li>
+                    <li><strong>应化校区课程：</strong>聚合物结构与性能、谱学成像分析、计算模拟与方法学等6门课程将在后续学期安排</li>
+                    <li><strong>免修课程：</strong>研究生综合英语、科技论文写作申请（待）免修</li>
+                    <li><strong>MOOC课程：</strong>化学实验安全知识为在线学习课程</li>
+                    <li><strong>周末课程：</strong>生物膜和脂类组学概论安排在周六上午</li>
+                    <li><strong>学分要求：</strong>硕士研究生需修满规定学分，当前已安排21学分</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 文章导航 -->
+        <nav class="article-navigation">
+            <a href="post5.html" class="nav-link">← 上一篇</a>
+            <a href="index.html" class="nav-link">返回博客列表</a>
+            <a href="post7.html" class="nav-link" style="opacity: 0.5; pointer-events: none;">下一篇 →</a>
+        </nav>
+    </article>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 陈家辉. 保留所有权利.</p>
+            <p>本网站使用静态技术构建，专注于学术交流与知识分享。</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

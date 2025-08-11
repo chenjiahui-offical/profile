@@ -3,6 +3,18 @@
 // 文章按时间从新到旧排列
 const blogData = [
     {
+        id: 'post6',
+        title: '2024-2025学年研究生课程时间表',
+        date: '2025年8月11日',
+        dateSort: '2025-08-11',
+        category: '生活感悟',
+        categoryClass: 'life',
+        excerpt: '详细记录了2024-2025学年研究生课程的时间安排，包括公共课程、学科基础课程、专业选修课程等各类课程的具体时间表，以及学分统计和课程状态分析。',
+        image: 'blog/images/post6.png',
+        tags: ['课程安排', '研究生', '时间管理'],
+        featured: true
+    },
+    {
         id: 'post5',
         title: '自注意力机制：理解现代AI大模型的核心',
         date: '2025年8月9日',
