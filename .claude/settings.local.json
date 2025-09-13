@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:127.0.0.1)",
+      "mcp__ide__executeCode"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
