@@ -45,8 +45,7 @@
 
 脚本文件：
 - blog-data.js - 文章数据配置（唯一需要维护的数据源）
-- post-loader.js - 自动加载脚本（自动读取blog-data.js并填充页面）
-- ../script.js - 通用脚本
+- ../script.js - 通用脚本（包含自动加载功能）
 -
 <script>
 var _hmt = _hmt || [];
@@ -169,7 +168,6 @@ def example_function():
     </footer>
 
     <script src="blog-data.js"></script>
-    <script src="post-loader.js"></script>
     <script src="../script.js"></script>
 </body>
 

@@ -118,144 +118,84 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 博客文章导航自动检测
+// 博客文章导航自动检测（基于文件名数字顺序）
 document.addEventListener('DOMContentLoaded', function() {
     // 检查是否在博客文章页面
-    const articleNav = document.querySelector('.article-navigation');
-    if (!articleNav) return;
+    const postNavigation = document.querySelector('.post-navigation');
+    if (!postNavigation || typeof blogData === 'undefined') return;
     
-    // 获取当前页面的文章ID
+    // 从URL获取当前文章ID
     const currentPath = window.location.pathname;
-    const currentPostMatch = currentPath.match(/post(\d+)\.html/);
+    const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const currentPostId = filename.replace('.html', '');
+    
+    // 提取当前文章的数字（如 post1 -> 1）
+    const currentPostMatch = currentPostId.match(/post(\d+)/);
     if (!currentPostMatch) return;
     
     const currentPostNum = parseInt(currentPostMatch[1]);
     
-    // 从blog-data.js获取所有文章（如果可用）
-    if (typeof blogData !== 'undefined') {
-        // 按日期排序
-        const sortedPosts = blogData.sort((a, b) => 
-            new Date(b.dateSort) - new Date(a.dateSort)
-        );
-        
-        // 找到当前文章的索引
-        const currentIndex = sortedPosts.findIndex(post => 
-            post.id === `post${currentPostNum}`
-        );
-        
-        if (currentIndex !== -1) {
-            // 更新导航链接
-            const allLinks = articleNav.querySelectorAll('a, span');
-            const prevLink = allLinks[0]; // 第三个链接是"上一篇"
-            const nextLink = allLinks[2]; // 第一个链接是"下一篇"
-            
-            // 上一篇（更旧的文章，索引+1）
-            if (currentIndex < sortedPosts.length - 1) {
-                const prevPost = sortedPosts[currentIndex + 1];
-                const prevPostNum = prevPost.id.replace('post', '');
-                if (prevLink && prevLink.tagName === 'A') {
-                    prevLink.href = `post${prevPostNum}.html`;
-                    prevLink.style.opacity = '1';
-                    prevLink.style.cursor = 'pointer';
-                    prevLink.style.borderColor = '';
-                    prevLink.style.color = '';
-                    prevLink.onclick = null;
-                }
-            } else {
-                // 没有上一篇（已经是最旧的文章）
-                if (prevLink) {
-                    prevLink.style.opacity = '0.5';
-                    prevLink.style.cursor = 'not-allowed';
-                    prevLink.style.borderColor = '#ccc';
-                    prevLink.style.color = '#999';
-                    prevLink.onclick = (e) => e.preventDefault();
-                }
-            }
-            
-            // 下一篇（更新的文章，索引-1）
-            if (currentIndex > 0) {
-                const nextPost = sortedPosts[currentIndex - 1];
-                const nextPostNum = nextPost.id.replace('post', '');
-                
-                // 如果是span，转换为a标签
-                if (nextLink && nextLink.tagName === 'SPAN') {
-                    const newNextLink = document.createElement('a');
-                    newNextLink.href = `post${nextPostNum}.html`;
-                    newNextLink.className = 'nav-link';
-                    newNextLink.textContent = '下一篇 →';
-                    nextLink.parentNode.replaceChild(newNextLink, nextLink);
-                } else if (nextLink && nextLink.tagName === 'A') {
-                    nextLink.href = `post${nextPostNum}.html`;
-                    nextLink.style.opacity = '1';
-                    nextLink.style.cursor = 'pointer';
-                    nextLink.style.borderColor = '';
-                    nextLink.style.color = '';
-                }
-            } else {
-                // 没有下一篇（已经是最新的文章）
-                if (nextLink && nextLink.tagName === 'A') {
-                    const disabledSpan = document.createElement('span');
-                    disabledSpan.className = 'nav-link';
-                    disabledSpan.textContent = '下一篇 →';
-                    disabledSpan.style.opacity = '0.5';
-                    disabledSpan.style.cursor = 'not-allowed';
-                    disabledSpan.style.borderColor = '#ccc';
-                    disabledSpan.style.color = '#999';
-                    nextLink.parentNode.replaceChild(disabledSpan, nextLink);
-                } else if (nextLink && nextLink.tagName === 'SPAN') {
-                    // 已经是span，只需要设置样式
-                    nextLink.style.opacity = '0.5';
-                    nextLink.style.cursor = 'not-allowed';
-                    nextLink.style.borderColor = '#ccc';
-                    nextLink.style.color = '#999';
-                }
-            }
+    // 查找上一篇（post数字-1）和下一篇（post数字+1）
+    const prevPostId = `post${currentPostNum - 1}`;
+    const nextPostId = `post${currentPostNum + 1}`;
+    
+    // 在blogData中查找这些文章是否存在
+    const prevPost = blogData.find(post => post.id === prevPostId);
+    const nextPost = blogData.find(post => post.id === nextPostId);
+    
+    // 更新上一篇链接（post数字-1）
+    const prevLink = postNavigation.querySelector('.prev-post');
+    if (prevLink) {
+        if (prevPost) {
+            prevLink.href = `${prevPost.id}.html`;
+            prevLink.classList.remove('disabled');
+            prevLink.title = prevPost.title;
+            prevLink.style.opacity = '';
+            prevLink.style.cursor = '';
+            prevLink.onclick = null;
+        } else {
+            prevLink.href = '#';
+            prevLink.classList.add('disabled');
+            prevLink.style.opacity = '0.5';
+            prevLink.style.cursor = 'not-allowed';
+            prevLink.onclick = (e) => e.preventDefault();
         }
-    } else {
-        // 如果没有blogData，使用简单的数字判断
-        const prevLink = articleNav.querySelector('a[href*="post"]:first-child');
-        const nextLink = articleNav.querySelector('a[href*="post"]:last-child, span:last-child');
-        
-        // 简单判断：假设post7是最新的
-        const maxPostNum = 7; // 可以根据实际情况调整
-        
-        if (currentPostNum > 1) {
-            if (prevLink) {
-                prevLink.href = `post${currentPostNum - 1}.html`;
-            }
-        }
-        
-        if (currentPostNum < maxPostNum) {
-            if (nextLink && nextLink.tagName === 'SPAN') {
-                const newNextLink = document.createElement('a');
-                newNextLink.href = `post${currentPostNum + 1}.html`;
-                newNextLink.className = 'nav-link';
-                newNextLink.textContent = '下一篇 →';
-                nextLink.parentNode.replaceChild(newNextLink, nextLink);
-            }
+    }
+    
+    // 更新下一篇链接（post数字+1）
+    const nextLink = postNavigation.querySelector('.next-post');
+    if (nextLink) {
+        if (nextPost) {
+            nextLink.href = `${nextPost.id}.html`;
+            nextLink.classList.remove('disabled');
+            nextLink.title = nextPost.title;
+            nextLink.style.opacity = '';
+            nextLink.style.cursor = '';
+            nextLink.onclick = null;
+        } else {
+            nextLink.href = '#';
+            nextLink.classList.add('disabled');
+            nextLink.style.opacity = '0.5';
+            nextLink.style.cursor = 'not-allowed';
+            nextLink.onclick = (e) => e.preventDefault();
         }
     }
 });
 
 
-// 自动加载博客文章的标签
+// 自动加载博客文章的标签（统一版本）
 document.addEventListener('DOMContentLoaded', function() {
-    // 检查是否在博客文章页面（支持新旧class名称）
-    const postTags = document.querySelector('.post-tags');
-    const articleTags = document.querySelector('.article-tags');
-    const tagsContainer = postTags || articleTags;
+    const tagsContainer = document.querySelector('.post-tags');
     
     if (!tagsContainer || typeof blogData === 'undefined') return;
     
-    // 获取当前页面的文章ID
+    // 从URL获取当前文章ID
     const currentPath = window.location.pathname;
-    const currentPostMatch = currentPath.match(/post(\d+)\.html/);
-    if (!currentPostMatch) return;
-    
-    const currentPostNum = parseInt(currentPostMatch[1]);
+    const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const currentPostId = filename.replace('.html', '');
     
     // 查找当前文章的数据
-    const currentPost = blogData.find(post => post.id === `post${currentPostNum}`);
+    const currentPost = blogData.find(post => post.id === currentPostId);
     
     if (currentPost && currentPost.tags) {
         // 清空现有标签
@@ -281,24 +221,19 @@ function formatDate(dateString) {
     return `${year}年${month}月${day}日`;
 }
 
-// 自动加载博客文章的元数据（日期、分类）
+// 自动加载博客文章的元数据（日期、分类）（统一版本）
 document.addEventListener('DOMContentLoaded', function() {
-    // 检查是否在博客文章页面（支持新旧class名称）
-    const postMetaInfo = document.querySelector('.post-meta-info');
-    const articleMeta = document.querySelector('.article-meta');
-    const metaContainer = postMetaInfo || articleMeta;
+    const metaContainer = document.querySelector('.post-meta-info');
     
     if (!metaContainer || typeof blogData === 'undefined') return;
     
-    // 获取当前页面的文章ID
+    // 从URL获取当前文章ID
     const currentPath = window.location.pathname;
-    const currentPostMatch = currentPath.match(/post(\d+)\.html/);
-    if (!currentPostMatch) return;
-    
-    const currentPostNum = parseInt(currentPostMatch[1]);
+    const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const currentPostId = filename.replace('.html', '');
     
     // 查找当前文章的数据
-    const currentPost = blogData.find(post => post.id === `post${currentPostNum}`);
+    const currentPost = blogData.find(post => post.id === currentPostId);
     
     if (currentPost) {
         // 更新日期
@@ -309,12 +244,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // 获取分类中文名称
+        const categoryMap = {
+            'research': '科研心得',
+            'tech': '技术分享',
+            'life': '生活感悟'
+        };
+        const categoryName = categoryMap[currentPost.categoryClass] || currentPost.category;
+        
         // 更新分类
-        if (currentPost.category) {
+        if (categoryName) {
             const categoryElement = metaContainer.querySelector('span:nth-child(3)');
             if (categoryElement) {
-                categoryElement.innerHTML = `<i class="fas fa-folder"></i> ${currentPost.category}`;
+                categoryElement.innerHTML = `<i class="fas fa-folder"></i> ${categoryName}`;
             }
+        }
+        
+        // 更新页面标题
+        if (currentPost.title) {
+            document.title = `${currentPost.title} - 陈家辉`;
+        }
+        
+        // 更新meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && currentPost.excerpt) {
+            metaDesc.setAttribute('content', currentPost.excerpt);
         }
     }
 });
