@@ -272,3 +272,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// 图片点击放大功能
+document.addEventListener('DOMContentLoaded', function() {
+    // 创建图片查看器模态框
+    const imageModal = document.createElement('div');
+    imageModal.className = 'image-modal';
+    imageModal.innerHTML = `
+        <div class="image-modal-overlay"></div>
+        <div class="image-modal-content">
+            <button class="image-modal-close" aria-label="关闭">&times;</button>
+            <img class="image-modal-img" src="" alt="">
+            <div class="image-modal-caption"></div>
+        </div>
+    `;
+    document.body.appendChild(imageModal);
+    
+    // 获取模态框元素
+    const modalOverlay = imageModal.querySelector('.image-modal-overlay');
+    const modalContent = imageModal.querySelector('.image-modal-content');
+    const modalImg = imageModal.querySelector('.image-modal-img');
+    const modalCaption = imageModal.querySelector('.image-modal-caption');
+    const closeBtn = imageModal.querySelector('.image-modal-close');
+    
+    // 为所有博客文章中的图片添加点击事件
+    const postContent = document.querySelector('.post-content');
+    if (postContent) {
+        const images = postContent.querySelectorAll('img');
+        
+        images.forEach(img => {
+            // 添加可点击样式
+            img.style.cursor = 'pointer';
+            img.title = '点击查看大图';
+            
+            // 点击图片打开模态框
+            img.addEventListener('click', function() {
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                modalCaption.textContent = this.alt || '';
+                imageModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // 禁止背景滚动
+            });
+        });
+    }
+    
+    // 关闭模态框的函数
+    function closeModal() {
+        imageModal.classList.remove('active');
+        document.body.style.overflow = ''; // 恢复滚动
+    }
+    
+    // 点击关闭按钮
+    closeBtn.addEventListener('click', closeModal);
+    
+    // 点击遮罩层关闭
+    modalOverlay.addEventListener('click', closeModal);
+    
+    // 按ESC键关闭
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // 防止点击图片本身关闭模态框
+    modalImg.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
