@@ -1,5 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!--
+博客文章模板使用说明（学术科技主题版 - 自动加载版）：
+
+1. 复制此模板创建新文章（如 post8.html）
+
+2. 修改以下占位符：
+   - <title> 中的 [文章标题]
+   - <h1 class="post-title"> 中的 [文章标题]
+   - 文章正文内容
+   
+   注意：日期、分类、标签会自动从 blog-data.js 加载，无需手动填写！
+
+3. 在 blog-data.js 中添加文章信息（这是唯一需要维护的地方）：
+   {
+       id: 'post8',                    // 必须与文件名一致（不含.html）
+       title: '文章标题',
+       dateSort: '2025-11-17',         // 格式：YYYY-MM-DD
+       category: '科研心得',           // 分类名称（仅用于显示）
+       categoryClass: 'research',      // 分类类别：research/tech/life
+       excerpt: '文章摘要',
+       image: 'blog/images/post8.png',
+       tags: ['标签1', '标签2'],      // 标签数组
+       featured: true                  // 是否在主页显示
+   }
+
+4. 自动加载功能：
+   ✅ 日期自动从 blog-data.js 的 dateSort 字段加载并格式化
+   ✅ 分类自动从 blog-data.js 的 categoryClass 字段加载
+   ✅ 标签自动从 blog-data.js 的 tags 数组加载
+   ✅ 上一篇/下一篇导航自动根据文章顺序生成
+   ✅ 页面标题和描述自动更新
+
+设计特点：
+✨ 学术科技融合主题 - 深色背景 + 琥珀色/青色强调
+✨ 专业字体系统 - Crimson Pro (衬线) + JetBrains Mono (等宽)
+✨ 网格背景效果 - 模拟科研论文网格纸
+✨ 渐变色装饰 - 青色到琥珀色的渐变边框
+✨ 响应式设计 - 完美适配桌面/平板/移动端
+
+样式文件：
+- ../styles.css - 主样式（导航栏、页脚等）
+- post-styles.css - 文章详情页专用样式
+
+脚本文件：
+- blog-data.js - 文章数据配置（唯一需要维护的数据源）
+- post-loader.js - 自动加载脚本（自动读取blog-data.js并填充页面）
+- ../script.js - 通用脚本
+-
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -13,111 +61,11 @@ var _hmt = _hmt || [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[文章标题] - 陈家辉</title>
+    <meta name="description" content="[文章摘要]">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="post-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* 博客文章专用样式 */
-        .blog-article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            padding-top: 120px; /* 避免被导航栏遮挡 */
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .article-title {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-        
-        .article-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .article-tags {
-            margin-top: 1rem;
-        }
-        
-        .article-content {
-            font-size: 1.1rem;
-            color: #444;
-        }
-        
-        .article-content h2 {
-            color: #2c3e50;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #3498db;
-        }
-        
-        .article-content h3 {
-            color: #34495e;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .article-content p {
-            margin-bottom: 1.2rem;
-        }
-        
-        .article-content code {
-            background: #f8f9fa;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .article-content pre {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid #3498db;
-            padding-left: 1rem;
-            margin: 1rem 0;
-            font-style: italic;
-            color: #666;
-        }
-        
-        .article-navigation {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-link {
-            color: #3498db;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            background: #3498db;
-            color: white;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -125,7 +73,7 @@ var _hmt = _hmt || [];
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>陈家辉 - Jiahui Chen</a></h2>
+                <h2>陈家辉 · Jiahui Chen</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="../index.html#home">首页</a></li>
@@ -139,22 +87,25 @@ var _hmt = _hmt || [];
     </nav>
 
     <!-- 博客文章内容 -->
-    <article class="blog-article">
-        <header class="article-header">
-            <h1 class="article-title">[文章标题]</h1>
-            <div class="article-meta">
-                <span><i class="fas fa-calendar"></i> [发布日期]</span>
+    <article class="post-container">
+        <a href="index.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i>
+            返回博客列表
+        </a>
+        
+        <header class="post-header">
+            <h1 class="post-title">[文章标题]</h1>
+            <div class="post-meta-info">
+                <span><i class="fas fa-calendar"></i> 加载中...</span>
                 <span><i class="fas fa-user"></i> 陈家辉</span>
-                <span><i class="fas fa-folder"></i> [分类]</span>
+                <span><i class="fas fa-folder"></i> 加载中...</span>
             </div>
-            <div class="article-tags">
-                <span class="tag">[标签1]</span>
-                <span class="tag">[标签2]</span>
-                <span class="tag">[标签3]</span>
+            <div class="post-tags">
+                <!-- 标签将从 blog-data.js 自动加载 -->
             </div>
         </header>
 
-        <div class="article-content">
+        <div class="post-content">
             <!-- 文章摘要 -->
             <p><strong>摘要：</strong>[文章摘要，简要介绍文章的主要内容和观点]</p>
 
@@ -190,10 +141,22 @@ def example_function():
         </div>
 
         <!-- 文章导航 -->
-        <nav class="article-navigation">
-            <a href="[上一篇文章链接]" class="nav-link">← 上一篇</a>
-            <a href="index.html" class="nav-link">返回博客列表</a>
-            <a href="[下一篇文章链接]" class="nav-link">下一篇 →</a>
+        <!-- 导航逻辑：上一篇=更旧的文章，下一篇=更新的文章 -->
+        <!-- 如果是最旧的文章，上一篇链接设为 # 并添加 disabled class -->
+        <!-- 如果是最新的文章，下一篇链接设为 # 并添加 disabled class -->
+        <nav class="post-navigation">
+            <a href="[更旧的文章].html" class="nav-link prev-post">
+                <i class="fas fa-arrow-left"></i>
+                <span>上一篇</span>
+            </a>
+            <a href="index.html" class="nav-link back-link">
+                <i class="fas fa-th"></i>
+                <span>返回博客列表</span>
+            </a>
+            <a href="[更新的文章].html" class="nav-link next-post">
+                <span>下一篇</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </nav>
     </article>
 
@@ -205,6 +168,8 @@ def example_function():
         </div>
     </footer>
 
+    <script src="blog-data.js"></script>
+    <script src="post-loader.js"></script>
     <script src="../script.js"></script>
 </body>
 

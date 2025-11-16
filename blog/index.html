@@ -14,7 +14,9 @@ var _hmt = _hmt || [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客文章 - 陈家辉</title>
+    <meta name="description" content="陈家辉的学术博客，分享科研心得、技术探索与生活感悟">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -23,7 +25,7 @@ var _hmt = _hmt || [];
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>陈家辉 - Jiahui Chen</a></h2>
+                <h2>陈家辉 · Jiahui Chen</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="../index.html#home">首页</a></li>
@@ -80,222 +82,12 @@ var _hmt = _hmt || [];
     </footer>
 
     <style>
-        /* 博客列表页面专用样式 */
+        /* 额外的页面特定样式 */
         .blog-list {
-            padding-top: 120px; /* 避免被导航栏遮挡 */
+            padding-top: 120px;
             min-height: 100vh;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        
-        .blog-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 2rem 0;
-        }
-        
-        .page-title {
-            font-size: 3.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .page-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        /* 分类筛选按钮样式 */
-        .blog-categories {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .category-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            background: white;
-            color: #666;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            font-size: 1rem;
-        }
-        
-        .category-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            color: #3498db;
-        }
-        
-        .category-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .category-btn i {
-            font-size: 1.1rem;
-        }
-        
-        /* 博客文章列表样式 */
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .blog-post-item {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .blog-post-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .blog-post-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .post-date {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .blog-post-item h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            line-height: 1.4;
-        }
-        
-        .blog-post-item h2 a {
-            color: #2c3e50;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .blog-post-item h2 a:hover {
-            color: #667eea;
-        }
-        
-        .post-excerpt {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-        
-        .post-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .tag {
-            background: #f8f9fa;
-            color: #666;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-        
-        .tag:hover {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .blog-list {
-                padding-top: 100px;
-            }
-            
-            .page-title {
-                font-size: 2.5rem;
-            }
-            
-            .blog-categories {
-                gap: 0.5rem;
-            }
-            
-            .category-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .blog-posts {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .blog-post-item {
-                padding: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .page-title {
-                font-size: 2rem;
-            }
-            
-            .page-subtitle {
-                font-size: 1rem;
-            }
-            
-            .category-btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.85rem;
-            }
-            
-            .category-btn span {
-                display: none;
-            }
-            
-            .category-btn i {
-                margin: 0;
-            }
-        }
+
     </style>
 
     <script src="blog-data.js"></script>
@@ -307,6 +99,14 @@ var _hmt = _hmt || [];
             initCategoryFilter();
         });
 
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            return `${year}年${month}月${day}日`;
+        }
+
         function loadAllBlogPosts() {
             const blogPostsContainer = document.getElementById('blog-posts');
             if (!blogPostsContainer) return;
@@ -315,7 +115,7 @@ var _hmt = _hmt || [];
             
             blogPostsContainer.innerHTML = allPosts.map(post => `
                 <article class="blog-post-item" data-category="${post.categoryClass}">
-                    <div class="post-date">${post.date}</div>
+                    <div class="post-date">${formatDate(post.dateSort)}</div>
                     <h2><a href="${post.id}.html">${post.title}</a></h2>
                     <p class="post-excerpt">${post.excerpt}</p>
                     <div class="post-tags">

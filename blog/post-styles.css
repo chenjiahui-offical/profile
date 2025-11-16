@@ -1,0 +1,560 @@
+/* 博客文章详情页样式 - 学术论文风格 */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+    --primary-dark: #0a1929;
+    --primary-blue: #1e3a5f;
+    --primary-cyan: #2d5f7f;
+    --accent-amber: #f4a261;
+    --accent-teal: #2a9d8f;
+    --bg-primary: #0d1b2a;
+    --bg-secondary: #1b263b;
+    --bg-tertiary: #415a77;
+    --text-primary: #e0e1dd;
+    --text-secondary: #b8bfc7;
+    --text-muted: #778da9;
+    --highlight: #f4a261;
+    --highlight-glow: rgba(244, 162, 97, 0.3);
+    --grid-color: rgba(42, 157, 143, 0.1);
+    --font-serif: 'Crimson Pro', 'Noto Serif SC', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    --font-sans: 'Noto Sans SC', -apple-system, sans-serif;
+    --spacing-unit: 8px;
+    --border-radius: 4px;
+    --transition-speed: 0.3s;
+}
+
+/* 文章容器 */
+.post-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+    position: relative;
+}
+
+/* 文章头部 */
+.post-header {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid rgba(42, 157, 143, 0.2);
+    position: relative;
+}
+
+.post-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent-amber));
+}
+
+.post-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.article-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.post-meta-info {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+}
+
+.post-meta-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(27, 38, 59, 0.4);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(42, 157, 143, 0.15);
+    transition: all var(--transition-speed) ease;
+}
+
+.post-meta-info span:hover {
+    background: rgba(27, 38, 59, 0.6);
+    border-color: rgba(42, 157, 143, 0.3);
+    transform: translateY(-1px);
+}
+
+.post-meta-info i {
+    color: var(--accent-amber);
+    font-size: 1rem;
+}
+
+/* 文章内容 */
+.post-content {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+}
+
+.post-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-left: 20px;
+}
+
+.post-content h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 70%;
+    background: linear-gradient(180deg, var(--accent-teal), var(--accent-amber));
+    border-radius: 3px;
+}
+
+.post-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.post-content strong {
+    color: var(--accent-amber);
+    font-weight: 600;
+}
+
+.post-content em {
+    color: var(--accent-teal);
+    font-style: italic;
+}
+
+.post-content a {
+    color: var(--accent-teal);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(42, 157, 143, 0.3);
+    transition: all var(--transition-speed) ease;
+}
+
+.post-content a:hover {
+    color: var(--accent-amber);
+    border-bottom-color: var(--accent-amber);
+}
+
+/* 代码块样式 */
+.post-content code {
+    font-family: var(--font-mono);
+    background: rgba(27, 38, 59, 0.6);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--accent-amber);
+    border: 1px solid rgba(42, 157, 143, 0.2);
+}
+
+.post-content pre {
+    background: rgba(27, 38, 59, 0.8);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    color: var(--text-secondary);
+}
+
+/* 引用块样式 */
+.post-content blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: rgba(27, 38, 59, 0.4);
+    border-left: 4px solid var(--accent-teal);
+    border-radius: var(--border-radius);
+    font-style: italic;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.post-content blockquote::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 3rem;
+    color: var(--accent-teal);
+    opacity: 0.3;
+    font-family: var(--font-serif);
+}
+
+/* 列表样式 */
+.post-content ul,
+.post-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.post-content ul li::marker {
+    color: var(--accent-teal);
+}
+
+.post-content ol li::marker {
+    color: var(--accent-amber);
+    font-weight: 600;
+}
+
+/* 图片样式 */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(42, 157, 143, 0.2);
+}
+
+/* 表格样式 */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: rgba(27, 38, 59, 0.4);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.post-content th,
+.post-content td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(42, 157, 143, 0.2);
+}
+
+.post-content th {
+    background: rgba(42, 157, 143, 0.2);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.post-content tr:hover {
+    background: rgba(42, 157, 143, 0.1);
+}
+
+/* 分隔线 */
+.post-content hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+    margin: 3rem 0;
+}
+
+/* 文章标签（在header中） */
+.post-tags {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(42, 157, 143, 0.15);
+}
+
+.tag {
+    background: linear-gradient(135deg, rgba(42, 157, 143, 0.2), rgba(244, 162, 97, 0.15));
+    color: var(--accent-teal);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.tag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(42, 157, 143, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(42, 157, 143, 0.5);
+    border-color: transparent;
+}
+
+.tag:hover::after {
+    left: 100%;
+}
+
+/* 返回按钮 */
+.back-to-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+    padding: 0.9rem 1.8rem;
+    background: rgba(27, 38, 59, 0.6);
+    color: var(--accent-teal);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-to-blog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(42, 157, 143, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.back-to-blog:hover::before {
+    left: 100%;
+}
+
+.back-to-blog:hover {
+    background: var(--accent-teal);
+    color: var(--primary-dark);
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(42, 157, 143, 0.5);
+    border-color: var(--accent-teal);
+}
+
+.back-to-blog i {
+    transition: transform var(--transition-speed) ease;
+}
+
+.back-to-blog:hover i {
+    transform: translateX(-3px);
+}
+
+/* 文章导航 */
+.post-navigation {
+    margin-top: 5rem;
+    padding: 2.5rem 0;
+    border-top: 2px solid rgba(42, 157, 143, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    position: relative;
+}
+
+.post-navigation::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent-amber));
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.2rem 1.5rem;
+    background: rgba(27, 38, 59, 0.6);
+    color: var(--accent-teal);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(42, 157, 143, 0.3);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(42, 157, 143, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link:hover:not(.disabled)::before {
+    left: 100%;
+}
+
+.nav-link:hover:not(.disabled) {
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(42, 157, 143, 0.5);
+    border-color: transparent;
+}
+
+.nav-link.disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    background: rgba(27, 38, 59, 0.3);
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.prev-post:hover:not(.disabled) i {
+    transform: translateX(-3px);
+}
+
+.next-post:hover:not(.disabled) i {
+    transform: translateX(3px);
+}
+
+.back-link {
+    background: rgba(27, 38, 59, 0.8);
+    border-color: rgba(42, 157, 143, 0.4);
+}
+
+.back-link:hover {
+    background: rgba(42, 157, 143, 0.2);
+    border-color: var(--accent-teal);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .post-container {
+        padding: 100px 15px 60px;
+    }
+    
+    .post-title {
+        font-size: 2.2rem;
+    }
+    
+    .post-meta-info {
+        gap: 1rem;
+    }
+    
+    .post-meta-info span {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .post-tags {
+        gap: 0.6rem;
+    }
+    
+    .tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .post-content {
+        font-size: 1rem;
+    }
+    
+    .post-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .post-content pre {
+        padding: 1rem;
+    }
+    
+    .post-navigation {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .back-to-blog {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-title {
+        font-size: 1.8rem;
+    }
+    
+    .post-meta-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .post-meta-info span {
+        width: 100%;
+    }
+}

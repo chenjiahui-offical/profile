@@ -14,146 +14,9 @@ var _hmt = _hmt || [];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自注意力机制：理解现代AI大模型的核心 - 陈家辉</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="post-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* 博客文章专用样式 */
-        .blog-article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            padding-top: 120px; /* 避免被导航栏遮挡 */
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .article-title {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-        
-        .article-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .article-tags {
-            margin-top: 1rem;
-        }
-        
-        .article-content {
-            font-size: 1.1rem;
-            color: #444;
-        }
-        
-        .article-content h2 {
-            color: #2c3e50;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #3498db;
-        }
-        
-        .article-content h3 {
-            color: #34495e;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
 
-        .article-content h4 {
-            color: #34495e;
-            margin-top: 1.2rem;
-            margin-bottom: 0.6rem;
-            font-size: 1.1rem;
-        }
-        
-        .article-content p {
-            margin-bottom: 1.2rem;
-        }
-        
-        .article-content ul, .article-content ol {
-            margin-bottom: 1.2rem;
-            padding-left: 2rem;
-        }
-        
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .article-content code {
-            background: #f8f9fa;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .article-content pre {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid #3498db;
-            padding-left: 1rem;
-            margin: 1rem 0;
-            font-style: italic;
-            color: #666;
-        }
-
-        .article-content strong {
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        .article-navigation {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-link {
-            color: #3498db;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            background: #3498db;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-content {
-                font-size: 1rem;
-            }
-            
-            .article-navigation {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -161,7 +24,7 @@ var _hmt = _hmt || [];
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>陈家辉 - Jiahui Chen</h2>
+                <h2>陈家辉 · Jiahui Chen</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="../index.html#home">首页</a></li>
@@ -175,23 +38,26 @@ var _hmt = _hmt || [];
     </nav>
 
     <!-- 博客文章内容 -->
-    <article class="blog-article">
-        <header class="article-header">
-            <h1 class="article-title">自注意力机制：理解现代AI大模型的核心</h1>
-            <div class="article-meta">
-                <span><i class="fas fa-calendar"></i> 2025年8月9日</span>
+    <article class="post-container">
+        <a href="index.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i>
+            返回博客列表
+        </a>
+        
+        <header class="post-header">
+            <h1 class="post-title">自注意力机制：理解现代AI大模型的核心</h1>
+            <div class="post-meta-info">
+                <span><i class="fas fa-calendar"></i> 加载中...</span>
                 <span><i class="fas fa-user"></i> 陈家辉</span>
-                <span><i class="fas fa-folder"></i> 科研心得</span>
+                <span><i class="fas fa-folder"></i> 加载中...</span>
             </div>
-            <div class="article-tags">
-                <span class="tag">深度学习</span>
-                <span class="tag">自注意力机制</span>
-                <span class="tag">QKV</span>
-                <span class="tag">Transformer</span>
+            
+            <div class="post-tags">
+                <!-- 标签将自动从blog-data.js加载 -->
             </div>
         </header>
 
-        <div class="article-content">
+        <div class="post-content">
             <!-- 文章摘要 -->
             <p><strong>摘要：</strong>本文深入浅出地介绍<strong>自注意力机制</strong>的核心概念与工作原理，以通俗易懂的方式帮助非计算机专业读者理解这一现代AI的关键技术。Transformer架构是当今各类AI大模型的基础架构，其核心论文<strong>《Attention is All You Need》</strong>首次系统性地介绍了自注意力机制，并通过注意力机制的巧妙堆叠构建了现代大模型的基石。深入理解自注意力机制，对于把握当今AI大模型的运行机制具有重要意义。</p>
 
@@ -296,11 +162,20 @@ var _hmt = _hmt || [];
             <p>理解这些核心机制，有助于我们更好地把握现代AI大模型的运行原理，为未来的技术发展和应用奠定理论基础。</p>
         </div>
 
-        <!-- 文章导航 -->
-        <nav class="article-navigation">
-            <a href="post4.html" class="nav-link">← 上一篇</a>
-            <a href="index.html" class="nav-link">返回博客列表</a>
-            <a href="post6.html" class="nav-link">下一篇 →</a>
+            <!-- 文章导航 -->
+        <nav class="post-navigation">
+            <a href="post4.html" class="nav-link prev-post">
+                <i class="fas fa-arrow-left"></i>
+                <span>上一篇</span>
+            </a>
+            <a href="index.html" class="nav-link back-link">
+                <i class="fas fa-th"></i>
+                <span>返回博客列表</span>
+            </a>
+            <a href="post6.html" class="nav-link next-post">
+                <span>下一篇</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </nav>
     </article>
 
@@ -312,6 +187,8 @@ var _hmt = _hmt || [];
         </div>
     </footer>
 
+    <script src="blog-data.js"></script>
+    <script src="post-loader.js"></script>
     <script src="../script.js"></script>
 </body>
 

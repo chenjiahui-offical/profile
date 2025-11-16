@@ -15,6 +15,7 @@ var _hmt = _hmt || [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陈家辉 - 科研人员个人主页</title>
+    <meta name="description" content="陈家辉的个人学术主页，专注于计算机与高分子化学学科交叉研究">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -24,7 +25,7 @@ var _hmt = _hmt || [];
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2> 陈家辉 - Jiahui Chen </h2>
+                <h2>陈家辉 · Jiahui Chen</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">首页</a></li>
@@ -48,10 +49,10 @@ var _hmt = _hmt || [];
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>你好，我是 <span class="highlight">陈家辉</span></h1>
-                    <p class="hero-subtitle">高分子化学 科研人员</p>
+                    <p class="hero-subtitle">Polymer Chemistry Researcher</p>
                     <p class="hero-description">
-                        专注于 计算机与高分子化学学科交叉，致力于通过科学研究推动 高分子化学 的发展，
-                        同时通过博客分享知识和见解。
+                        专注于计算机与高分子化学学科交叉，致力于通过科学研究推动高分子化学的发展。
+                        在这里分享我的研究成果、学术思考与技术探索。
                     </p>
                     <div class="hero-buttons">
                         <a href="#research" class="btn btn-primary">查看研究</a>
@@ -59,7 +60,7 @@ var _hmt = _hmt || [];
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="resource\人像照.jpg" alt="个人照片">
+                    <img src="resource\人像照.jpg" alt="陈家辉">
                 </div>
             </div>
         </div>
@@ -535,6 +536,14 @@ var _hmt = _hmt || [];
             loadFeaturedBlogPosts();
         });
 
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            return `${year}年${month}月${day}日`;
+        }
+
         function loadFeaturedBlogPosts() {
             const blogGrid = document.getElementById('blog-grid');
             if (!blogGrid) return;
@@ -553,7 +562,7 @@ var _hmt = _hmt || [];
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
-                            <span class="post-date">${post.date}</span>
+                            <span class="post-date">${formatDate(post.dateSort)}</span>
                             <span class="post-category">${post.category}</span>
                         </div>
                         <h3><a href="blog/${post.id}.html">${post.title}</a></h3>

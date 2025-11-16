@@ -3,9 +3,19 @@
 // 文章按时间从新到旧排列
 const blogData = [
     {
+        id: 'post7',
+        title: '免疫肽组学在下一代细菌疫苗开发中的应用',
+        dateSort: '2025-11-16',
+        category: '科研心得',
+        categoryClass: 'research',
+        excerpt: '本文介绍了免疫肽组学技术在细菌疫苗开发中的应用，探讨了如何利用MHC呈递的肽段鉴定技术来发现新型疫苗抗原，为应对抗生素耐药性提供新的解决方案。文献阅读笔记。',
+        image: 'blog/images/post7.png',
+        tags: ['文献阅读','免疫肽组学', '疫苗开发', '抗生素耐药性', 'MHC'],
+        featured: true
+    },
+    {
         id: 'post6',
         title: '2024-2025学年研究生课程时间表',
-        date: '2025年8月11日',
         dateSort: '2025-08-11',
         category: '生活感悟',
         categoryClass: 'life',
@@ -17,7 +27,6 @@ const blogData = [
     {
         id: 'post5',
         title: '自注意力机制：理解现代AI大模型的核心',
-        date: '2025年8月9日',
         dateSort: '2025-08-09',
         category: '科研心得',
         categoryClass: 'research',
@@ -29,7 +38,6 @@ const blogData = [
     {
         id: 'post4',
         title: 'Hell let loose的智能驾驶路线规划',
-        date: '2025年8月5日',
         dateSort: '2025-08-05',
         category: '技术分享',
         categoryClass: 'tech',
@@ -41,7 +49,6 @@ const blogData = [
     {
         id: 'post2',
         title: 'Hell let loose的地图战术分析网站',
-        date: '2025年8月3日',
         dateSort: '2025-08-03',
         category: '技术分享',
         categoryClass: 'tech',
@@ -53,7 +60,6 @@ const blogData = [
     {
         id: 'post3',
         title: 'Hell let loose的音效库网站',
-        date: '2025年8月3日',
         dateSort: '2025-08-03',
         category: '技术分享',
         categoryClass: 'tech',
@@ -65,7 +71,6 @@ const blogData = [
     {
         id: 'post1',
         title: '深度学习在电极微环境识别中的应用',
-        date: '2024年1月15日',
         dateSort: '2024-01-15',
         category: '科研心得',
         categoryClass: 'research',

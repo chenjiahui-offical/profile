@@ -1,2 +1,15 @@
 .vscode
 资料
+.kiro
+
+
+# 忽略 blog/post_tex/ 目录中除了 .tex 和 .pdf 外的所有文件
+# 首先忽略所有文件
+blog/post_tex/**/*
+# 然后不忽略特定类型的文件
+!blog/post_tex/**/*.tex
+!blog/post_tex/**/*.pdf
+!blog/post_tex/**/*.png
+# 确保目录本身不被忽略
+!blog/post_tex/
+!blog/post_tex/**/

@@ -15,109 +15,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2024-2025学年研究生课程时间表 - 陈家辉</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="post-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* 博客文章专用样式 */
-        .blog-article {
+        /* 课程表专用样式 */
+        .post-container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            padding-top: 120px;
-            line-height: 1.8;
-            min-height: 100vh;
         }
-
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .article-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .article-tags {
-            margin-top: 1rem;
-        }
-
-        .article-content {
-            font-size: 1.1rem;
-            color: #444;
-        }
-
-        /* 课程表样式 */
+        
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 30px;
+            margin: 2rem 0;
+            background: rgba(27, 38, 59, 0.6);
+            border-radius: var(--border-radius);
+            overflow: hidden;
         }
 
         .schedule-table th,
         .schedule-table td {
-            border: 1px solid #ddd;
+            border: 1px solid rgba(42, 157, 143, 0.2);
             padding: 8px;
             text-align: center;
             vertical-align: middle;
             font-size: 11px;
+            color: var(--text-secondary);
         }
 
         .schedule-table th {
-            background-color: #4CAF50;
-            color: white;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
+            color: var(--primary-dark);
             font-weight: bold;
         }
 
         .time-slot {
-            background-color: #e8f5e8;
+            background: rgba(42, 157, 143, 0.2);
             font-weight: bold;
             width: 80px;
         }
 
         .period-header {
-            background-color: #2196F3;
-            color: white;
+            background: var(--accent-teal);
+            color: var(--primary-dark);
             font-weight: bold;
         }
 
-        /* 课程颜色 */
-        .course-public {
-            background-color: #FFE0B2;
-            color: #E65100;
+        /* 课程类型颜色 */
+        .course-public { 
+            background-color: rgba(255, 224, 178, 0.15); 
+            color: #FFB74D;
+            transition: all var(--transition-speed) ease;
         }
-
-        .course-basic {
-            background-color: #E1F5FE;
-            color: #0277BD;
+        .course-public:hover { background-color: rgba(255, 224, 178, 0.25); }
+        
+        .course-basic { 
+            background-color: rgba(225, 245, 254, 0.15); 
+            color: #4FC3F7;
+            transition: all var(--transition-speed) ease;
         }
-
-        .course-elective {
-            background-color: #E8F5E8;
-            color: #388E3C;
+        .course-basic:hover { background-color: rgba(225, 245, 254, 0.25); }
+        
+        .course-elective { 
+            background-color: rgba(232, 245, 232, 0.15); 
+            color: #81C784;
+            transition: all var(--transition-speed) ease;
         }
-
-        .course-mooc {
-            background-color: #F3E5F5;
-            color: #7B1FA2;
+        .course-elective:hover { background-color: rgba(232, 245, 232, 0.25); }
+        
+        .course-mooc { 
+            background-color: rgba(243, 229, 245, 0.15); 
+            color: #BA68C8;
+            transition: all var(--transition-speed) ease;
         }
-
-        .course-major-basic {
-            background-color: #FFF8E1;
-            color: #FF6F00;
+        .course-mooc:hover { background-color: rgba(243, 229, 245, 0.25); }
+        
+        .course-major-basic { 
+            background-color: rgba(255, 248, 225, 0.15); 
+            color: #FFB300;
+            transition: all var(--transition-speed) ease;
         }
-
-        .course-phd {
-            background-color: #FFEBEE;
-            color: #C62828;
+        .course-major-basic:hover { background-color: rgba(255, 248, 225, 0.25); }
+        
+        .course-phd { 
+            background-color: rgba(255, 235, 238, 0.15); 
+            color: #EF5350;
+            transition: all var(--transition-speed) ease;
+        }
+        .course-phd:hover { background-color: rgba(255, 235, 238, 0.25); }
+        
+        .course-phd-public {
+            background-color: rgba(255, 243, 224, 0.15);
+            color: #FFA726;
+            transition: all var(--transition-speed) ease;
+        }
+        .course-phd-public:hover { background-color: rgba(255, 243, 224, 0.25); }
+        
+        /* 课程清单区域 */
+        .course-list-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(27, 38, 59, 0.4);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(42, 157, 143, 0.2);
+        }
+        
+        .course-list-section h3 {
+            text-align: center;
+            color: var(--text-primary);
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .course-list-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-teal), var(--accent-amber));
+        }
+        
+        .course-list-section h4 {
+            color: var(--accent-amber);
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .course-detail-table {
+            font-size: 0.9rem;
+        }
+        
+        .course-detail-table td {
+            font-size: 0.85rem;
         }
 
         .legend {
@@ -132,6 +169,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            padding: 0.5rem 1rem;
+            background: rgba(27, 38, 59, 0.4);
+            border-radius: var(--border-radius);
         }
 
         .legend-color {
@@ -141,8 +181,8 @@
         }
 
         .empty-slot {
-            background-color: #f9f9f9;
-            color: #ccc;
+            background-color: rgba(27, 38, 59, 0.2);
+            color: var(--text-muted);
         }
 
         .stats-container {
@@ -155,54 +195,36 @@
         .stats-table {
             width: 100%;
             border-collapse: collapse;
+            background: rgba(27, 38, 59, 0.6);
+            border-radius: var(--border-radius);
+            overflow: hidden;
         }
 
         .stats-table th,
         .stats-table td {
-            border: 1px solid #ddd;
+            border: 1px solid rgba(42, 157, 143, 0.2);
             padding: 10px;
             text-align: center;
+            color: var(--text-secondary);
         }
 
         .stats-table th {
-            background-color: #2196F3;
-            color: white;
+            background: var(--accent-teal);
+            color: var(--primary-dark);
         }
 
         .total-row {
-            background-color: #f0f8ff;
+            background: rgba(42, 157, 143, 0.2);
             font-weight: bold;
         }
 
         .note-box {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 5px;
+            background: rgba(244, 162, 97, 0.1);
+            border: 1px solid rgba(244, 162, 97, 0.3);
+            border-radius: var(--border-radius);
             padding: 15px;
             margin: 20px 0;
-        }
-
-        .article-navigation {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: #3498db;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background: #3498db;
-            color: white;
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -212,7 +234,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>陈家辉 - Jiahui Chen</h2>
+                <h2>陈家辉 · Jiahui Chen</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="../index.html#home">首页</a></li>
@@ -226,22 +248,26 @@
     </nav>
 
     <!-- 博客文章内容 -->
-    <article class="blog-article">
-        <header class="article-header">
-            <h1 class="article-title">2024-2025学年研究生课程时间表</h1>
-            <div class="article-meta">
-                <span><i class="fas fa-calendar"></i> 2025年8月11日</span>
+    <article class="post-container">
+        <a href="index.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i>
+            返回博客列表
+        </a>
+        
+        <header class="post-header">
+            <h1 class="post-title">2024-2025学年研究生课程时间表</h1>
+            <div class="post-meta-info">
+                <span><i class="fas fa-calendar"></i> 加载中...</span>
                 <span><i class="fas fa-user"></i> 陈家辉</span>
-                <span><i class="fas fa-folder"></i> 生活感悟</span>
+                <span><i class="fas fa-folder"></i> 加载中...</span>
             </div>
-            <div class="article-tags">
-                <span class="tag">课程安排</span>
-                <span class="tag">研究生</span>
-                <span class="tag">时间管理</span>
+            
+            <div class="post-tags">
+                <!-- 标签将自动从blog-data.js加载 -->
             </div>
         </header>
 
-        <div class="article-content">
+        <div class="post-content">
             <!-- 文章摘要 -->
             <p><strong>摘要：</strong>本文详细记录了2024-2025学年研究生课程的时间安排，包括公共课程、学科基础课程、专业选修课程等各类课程的具体时间表，以及学分统计和课程状态分析。</p>
 
@@ -604,12 +630,12 @@
             </div>
 
             <!-- 详细课程清单 -->
-            <div style="margin-top: 40px;">
-                <h3 style="text-align: center;">详细课程清单</h3>
+            <div class="course-list-section">
+                <h3>详细课程清单</h3>
                 <div class="stats-container">
                     <div>
                         <h4>硕士阶段课程 (38学分)</h4>
-                        <table class="stats-table" style="font-size: 11px;">
+                        <table class="stats-table course-detail-table">
                             <thead>
                                 <tr>
                                     <th>类型</th>
@@ -619,91 +645,91 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="background-color: #FFE0B2;">
+                                <tr class="course-public">
                                     <td>硕士公共</td>
                                     <td>新时代中国特色社会主义理论与实践</td>
                                     <td>2</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #FFE0B2;">
+                                <tr class="course-public">
                                     <td>硕士公共</td>
                                     <td>自然辩证法概论</td>
                                     <td>1</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #FFE0B2;">
+                                <tr class="course-public">
                                     <td>硕士公共</td>
                                     <td>研究生综合英语</td>
                                     <td>2</td>
                                     <td>已免修</td>
                                 </tr>
-                                <tr style="background-color: #FFE0B2;">
+                                <tr class="course-public">
                                     <td>硕士公共</td>
                                     <td>学术交流英语</td>
                                     <td>2</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #FFE0B2;">
+                                <tr class="course-public">
                                     <td>硕士公共</td>
                                     <td>科技论文写作</td>
                                     <td>2</td>
                                     <td>待免修</td>
                                 </tr>
-                                <tr style="background-color: #E1F5FE;">
+                                <tr class="course-basic">
                                     <td>学科基础</td>
                                     <td>功能高分子</td>
                                     <td>4</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E1F5FE;">
+                                <tr class="course-basic">
                                     <td>学科基础</td>
                                     <td>高等高分子化学</td>
                                     <td>2</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E1F5FE;">
+                                <tr class="course-basic">
                                     <td>学科基础</td>
                                     <td>聚合物结构与性能</td>
                                     <td>4</td>
                                     <td>待安排</td>
                                 </tr>
-                                <tr style="background-color: #FFF8E1;">
+                                <tr class="course-major-basic">
                                     <td>专业基础</td>
                                     <td>高级人工智能</td>
                                     <td>3</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #FFF8E1;">
+                                <tr class="course-major-basic">
                                     <td>专业基础</td>
                                     <td>绿色化学</td>
                                     <td>4</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E8F5E8;">
+                                <tr class="course-elective">
                                     <td>专业选修</td>
                                     <td>生物膜和脂类组学概论</td>
                                     <td>2</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E8F5E8;">
+                                <tr class="course-elective">
                                     <td>专业选修</td>
                                     <td>电子密度泛函理论</td>
                                     <td>3</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E8F5E8;">
+                                <tr class="course-elective">
                                     <td>专业选修</td>
                                     <td>化学实验安全知识</td>
                                     <td>1</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E8F5E8;">
+                                <tr class="course-elective">
                                     <td>专业选修</td>
                                     <td>有机合成化学B</td>
                                     <td>4</td>
                                     <td>已安排</td>
                                 </tr>
-                                <tr style="background-color: #E8F5E8;">
+                                <tr class="course-elective">
                                     <td>专业选修</td>
                                     <td>高聚物的力学性能</td>
                                     <td>2</td>
@@ -715,7 +741,7 @@
 
                     <div>
                         <h4>博士阶段课程 (7学分)</h4>
-                        <table class="stats-table" style="font-size: 11px;">
+                        <table class="stats-table course-detail-table">
                             <thead>
                                 <tr>
                                     <th>类型</th>
@@ -725,19 +751,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="background-color: #FFF3E0;">
+                                <tr class="course-phd-public">
                                     <td>博士公共课程</td>
                                     <td>中国马克思主义与当代</td>
                                     <td>2</td>
                                     <td>待安排</td>
                                 </tr>
-                                        <tr style="background-color: #FFEBEE;">
+                                <tr class="course-phd">
                                     <td>博士专业课程</td>
                                     <td>应化讲坛</td>
                                     <td>1</td>
                                     <td>待安排</td>
                                 </tr>
-                                <tr style="background-color: #FFEBEE;">
+                                <tr class="course-phd">
                                     <td>博士专业课程</td>
                                     <td>生物高分子材料</td>
                                     <td>4</td>
@@ -774,11 +800,20 @@
             </div>
         </div>
 
-        <!-- 文章导航 -->
-        <nav class="article-navigation">
-            <a href="post5.html" class="nav-link">← 上一篇</a>
-            <a href="index.html" class="nav-link">返回博客列表</a>
-            <a href="post7.html" class="nav-link">下一篇 →</a>
+            <!-- 文章导航 -->
+        <nav class="post-navigation">
+            <a href="post5.html" class="nav-link prev-post">
+                <i class="fas fa-arrow-left"></i>
+                <span>上一篇</span>
+            </a>
+            <a href="index.html" class="nav-link back-link">
+                <i class="fas fa-th"></i>
+                <span>返回博客列表</span>
+            </a>
+            <a href="post7.html" class="nav-link next-post">
+                <span>下一篇</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </nav>
     </article>
 
@@ -790,6 +825,8 @@
         </div>
     </footer>
 
+    <script src="blog-data.js"></script>
+    <script src="post-loader.js"></script>
     <script src="../script.js"></script>
 </body>
 
