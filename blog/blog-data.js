@@ -3,6 +3,17 @@
 // 文章按时间从新到旧排列
 const blogData = [
     {
+        id: 'post8',
+        title: 'Challenges and opportunities in mRNA vaccine development against bacteria',
+        dateSort: '2025-11-27',
+        category: '科研心得',
+        categoryClass: 'research',
+        excerpt: '本文系统论述了细菌mRNA疫苗从抗原筛选到构建设计的关键环节，重点梳理了当前临床前研究现状，并探讨了针对细菌感染的mRNA疫苗在转化应用方面存在的挑战与未来潜力。文献阅读笔记。',
+        image: 'blog/images/post8.png',
+        tags: ['文献阅读','mRNA疫苗', '细菌疫苗', '抗原选择', '免疫应答', '疫苗开发'],
+        featured: true
+    },
+    {
         id: 'post7',
         title: '免疫肽组学在下一代细菌疫苗开发中的应用',
         dateSort: '2025-11-16',

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f8a5b12ed5201a9a2bfea3042d7c73d8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges and opportunities in mRNA vaccine development against bacteria - 陈家辉</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="post-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* post8专用样式 */
+        .post-container {
+            max-width: 1000px;
+        }
+
+        /* PDF下载区域 */
+        .pdf-download-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: rgba(27, 38, 59, 0.6);
+            border-radius: var(--border-radius);
+            border: 2px solid rgba(42, 157, 143, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-download-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-teal), var(--accent-amber));
+        }
+
+        .pdf-icon {
+            font-size: 4rem;
+            color: var(--accent-amber);
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .pdf-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        .pdf-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .pdf-download-btn:hover::before {
+            left: 100%;
+        }
+
+        .pdf-download-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 35px rgba(42, 157, 143, 0.6);
+        }
+
+        .pdf-download-btn i {
+            font-size: 1.2rem;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .pdf-download-btn:hover i {
+            transform: translateY(2px);
+        }
+
+        .figure-container {
+            margin: 3rem 0;
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(27, 38, 59, 0.4);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(42, 157, 143, 0.2);
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .figure-caption {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: var(--font-mono);
+            text-align: center !important;
+        }
+
+        .table-container {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(27, 38, 59, 0.4);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(42, 157, 143, 0.2);
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+        }
+
+        .data-table th {
+            background: rgba(42, 157, 143, 0.2);
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid rgba(42, 157, 143, 0.3);
+            font-weight: 600;
+            color: var(--accent-amber);
+        }
+
+        .data-table td {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid rgba(42, 157, 143, 0.2);
+            line-height: 1.4;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .data-table tr:hover {
+            background: rgba(42, 157, 143, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>陈家辉 · Jiahui Chen</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="../index.html#about">关于我</a></li>
+                <li><a href="../index.html#research">研究成果</a></li>
+                <li><a href="../index.html#publications">发表论文</a></li>
+                <li><a href="../index.html#blog">博客</a></li>
+                <li><a href="../index.html#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="post-container">
+        <a href="index.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i>
+            返回博客列表
+        </a>
+
+        <header class="post-header">
+            <h1 class="post-title">Challenges and opportunities in mRNA vaccine development against bacteria</h1>
+            <p class="article-subtitle">针对细菌的mRNA疫苗研发面临的挑战与机遇</p>
+            <div class="post-meta-info">
+                <span><i class="fas fa-calendar"></i> 加载中...</span>
+                <span><i class="fas fa-user"></i> 陈家辉</span>
+                <span><i class="fas fa-folder"></i> 加载中...</span>
+            </div>
+
+            <div class="post-tags">
+                <!-- 标签将自动从blog-data.js加载 -->
+            </div>
+        </header>
+
+        <div class="post-content">
+            <p><strong>文献来源：</strong>本文档主要介绍 <em>Challenges and opportunities in mRNA vaccine development against bacteria</em>（doi:10.1038/s41564-025-02070-z）的相关内容，分享文献阅读中的心得体会。</p>
+
+            <p>mRNA疫苗自新冠爆发以来取得了迅速发展，而目前研究主要针对于癌症免疫疗法和病毒病原体靶向领域。由于细菌复杂的生物特性，目前细菌疫苗的还存在着抗原选择、免疫应答和mRNA构建设计等多方面的挑战。本文系统论述细菌mRNA疫苗从抗原筛选到构建设计的关键环节，重点梳理当前临床前研究现状，并探讨针对细菌感染的mRNA疫苗在转化应用方面存在的挑战与未来潜力。</p>
+
+            <h2>术语解释</h2>
+
+            <h3>核糖体</h3>
+            <p>核糖体（Ribosome）是细胞内负责蛋白质合成的重要细胞器，也称为蛋白质工厂。由核糖体RNA（rRNA）和蛋白质组成，在真核生物中由60S和40S两个亚基组成（80S核糖体），在原核生物中由50S和30S两个亚基组成（70S核糖体）。主要功能为：1.将信使RNA上的遗传密码翻译成蛋白质；2.催化氨基酸之间的肽键形成；3.确保蛋白质合成的准确性。工作时核糖体沿着mRNA移动，读取密码子并招募相应的tRNA携带氨基酸，逐步延伸肽链直到遇到终止密码子。</p>
+
+            <h3>SP序列</h3>
+            <p>SP序列（Signal Peptide，信号肽）是蛋白质N末端的一段氨基酸序列，主要功能是引导新生蛋白质到特定的细胞器或分泌到细胞外。通常包含15-30个氨基酸残基，位于蛋白质的N末端（起始端）。分为N、H、C三区，N区带正电荷的氨基酸残基，H区为疏水性核心区域，形成α-螺旋，C区为信号肽酶切割位点，常含有Ala-X-Ala基序。主要功能为引导蛋白质到特定位置（内质网、线粒体、叶绿体等），帮助蛋白质穿过膜结构，标记需要分泌的蛋白质。常见去向包括分泌到细胞外，定位到内质网，插入细胞膜，进入细胞器内部等。</p>
+
+            <h3>泛素</h3>
+            <p>泛素（Ubiquitin）是一种由76个氨基酸组成的小分子蛋白质，在细胞内广泛存在，主要参与蛋白质的标记和降解调控。泛素化是细胞内重要的翻译后修饰机制，维持蛋白质稳态和细胞功能。泛素化过程包括：1. 激活：E1泛素激活酶激活泛素；2. 结合：E2泛素结合酶携带泛素；3. 连接：E3泛素连接酶将泛素连接到靶蛋白；4. 延伸：可形成多聚泛素链。</p>
+
+            <h2>背景</h2>
+            <p>近年来细菌的抗生素耐药性（AMR）已经上升至危险水平，细菌疫苗则是一种对抗细菌感染和传播的有效工具。目前的细菌疫苗通常基于全细胞疫苗（灭活或减毒活病原体）、单独多糖或与蛋白质结合的多糖以及蛋白质亚单位疫苗。全细胞疫苗能够诱导多种细菌抗原免疫应答，尤其是减毒活疫苗，因为其能够继续进行复制从而诱导人体更加广泛的免疫反应。但是对于免疫缺陷的病人来说则收效甚微。对于亚单位疫苗来说，由于其直接携带了特定的细菌抗原（如通过将多糖与抗原蛋白共价连接制成的糖缀合物疫苗）故更加有效且经济，已经有多种成功的细菌亚单位疫苗获批上市，如预防b型流感嗜血杆菌、肺炎链球菌、脑膜炎奈瑟菌和伤寒沙门氏菌等。这类疫苗还能通过降低人群传播率来促进群体免疫。</p>
+
+            <p>对于病毒的mRNA疫苗而言，作为抗原的病毒蛋白因进化出利用宿主细胞机制的能力而更易被宿主细胞兼容翻译，而细菌可表达上千种蛋白，且这些蛋白由mRNA在哺乳动物细胞中的翻译效率可能低下，此外，这些外源蛋白的胞内运输、加工及翻译后修饰可能显著影响其稳定性和免疫原性。</p>
+
+            <p>抗菌免疫中存在着体液免疫和细胞免疫这两种形式。针对胞外细菌的疫苗研发主要聚焦于诱导有效体液免疫应答，因此通常将表面暴露或分泌型细菌蛋白/多糖视为潜在疫苗候选物。但这需要稳定的细菌蛋白分泌以实现B细胞受体的识别与结合，从而驱动抗体产生。对于胞内细菌而言，体液免疫可在其细胞侵入前提供一定保护，但是一旦细胞侵入宿主细胞后，细胞免疫通过直接杀伤感染细胞显得更为重要。细胞CD8+和CD4+ T细胞应答分别由抗原呈递细胞（APCs）主要组织相容性复合体（MHC）I类或II类分子呈递的短抗原肽触发。对于MHC-I受体加载，胞质肽经蛋白酶体降解后转运至内质网，在此装载至MHC-I受体；MHC-II分子则结合内吞途径降解的蛋白肽段。负载肽段的MHC-I和MHC-II分子最终转运至细胞膜，将其携带的抗原信息呈递给CD8+与CD4+ T细胞。</p>
+
+            <p>本文探讨了细菌mRNA疫苗设计面临的主要挑战，包括抗原鉴定与筛选，以及真核细胞内细菌抗原的翻译及翻译后加工过程的影响。同时提供了定制化mRNA构建策略的范例，以分别增强体液免疫或细胞免疫应答。最后概述了细菌mRNA疫苗临床前与临床研究的现状，并讨论了提升细菌mRNA疫苗翻译效率与免疫原性的潜在解决方案。</p>
+
+            <h2>细菌抗原选择与翻译后加工过程中的挑战</h2>
+            <p>对于全细胞疫苗和亚单位疫苗来说，需要抗原呈递细胞直接吞噬完整的细菌病原体或纯化的细菌蛋白才能激活免疫应答。而mRNA疫苗则通过诱导宿主自身细胞表达由mRNA编码的细菌蛋白抗原来发挥作用。大多数蛋白细菌疫苗由多种纯化蛋白组成，mRNA疫苗能够直接编码多价制剂中的不同蛋白质抗原，这种灵活性非常适用于变异菌株需多价疫苗策略应对的情况，且能适应感染不同阶段细菌的变异抗原表达。</p>
+
+            <p>然而设计基于mRNA的细菌疫苗也面临诸多挑战：许多细菌抗原是复杂的多亚基蛋白，其在细菌细胞内折叠通常需要特定分子伴侣，这些蛋白在哺乳动物宿主细胞内可能无法正确折叠；宿主细胞可能对蛋白质进行糖基化修饰，而这种修饰通常不存在于细菌。除上述挑战外，mRNA疫苗不能用于编码非蛋白质抗原（如细菌多糖），这使得其无法制备能引发针对特定细菌多糖荚膜的保护性抗体反应的细菌结合疫苗。</p>
+
+            <p>基于mRNA的细菌疫苗开发关键在于精心选择能在宿主细胞内高效表达并正确折叠的抗原。理想的抗原通常是低分子量蛋白亚基，能够在不需分子伴侣的情况下自组装，并经过设计以避免不必要的糖基化。</p>
+
+            <div class="figure-container">
+                <img src="post_tex/2/Figure1.png" alt="细菌疫苗研发中的抗原发现方法">
+                <p class="figure-caption">图1：细菌疫苗研发中的抗原发现方法</p>
+            </div>
+
+            <p>如图1所示目前可通过实验图1a和计算免疫学图1b的方法来确定抗原的选择。可通过感染患者样本、动物模型或细胞感染模型实验鉴定抗原。实验方法包括：基于质谱技术通过纯化并鉴定MHC分子呈递的T细胞表位（免疫肽组学）、循环免疫复合物或细菌表面蛋白进行抗原检测；亦可采用多种基于免疫反应性的筛选方法揭示免疫优势细菌抗原。计算免疫学方法可通过基于已知抗原特征对细菌蛋白进行规则筛选，从而优先确定候选疫苗抗原，促进抗原发现。此外，利用实验免疫学数据训练的机器学习模型可对潜在保护性抗原、呈递表位以及抗原性等相关特征进行评分和排序。</p>
+
+            <p>计算免疫学已成为一种经济高效且快速预测疫苗候选物的有力工具。尽管这些方法可能大幅缩减潜在疫苗候选物列表，但仍可能产生数十种需要实验验证的抗原候选。免疫肽组学筛选提供了一种补充策略，可整合来自不同细胞和感染模型的数据。最近的实验表明每个抗原通过免疫肽组学实验鉴定的免疫肽数量与免疫后细菌减少程度呈正相关。这表明通过免疫肽组学实验鉴定的免疫肽数量可作为细菌疫苗候选物优先排序的重要标准，但是依旧有待进一步的证实。通过mRNA疫苗平台可进一步加速抗原发现方法，其快速可扩展的生产能力使得能够评估多种不同蛋白抗原的保护效力，这一概念近期被称为反向疫苗学。</p>
+
+            <p>由于细菌有着自身合成蛋白质的机制，故递送的mRNA疫苗可能无法很好在宿主细胞中进行翻译（虽然能够通过密码子优化部分解决）。针对胞外菌的疫苗开发主要聚焦于诱导有效的体液免疫应答，通常以表面暴露或分泌型细菌蛋白作为潜在抗原候选。该策略要求细菌蛋白能够稳定分泌，以便被B细胞受体识别与结合。为在mRNA疫苗构建体中实现这一目标，常将天然细菌分泌信号替换为哺乳动物分泌信号，以确保在哺乳动物宿主细胞内实现正确的蛋白加工。</p>
+
+            <p>但该策略并非对所有细菌蛋白均有效。Peer实验室最新关于鼠疫耶尔森菌mRNA疫苗的研究中，对编码荚膜抗原F1蛋白的mRNA构建体进行了天然信号肽替换实验。与具有免疫原性的重组F1蛋白疫苗相反，融合IgG κ链来源的哺乳动物信号肽序列的mRNA编码抗原仅引发细胞免疫应答而未产生体液免疫。研究者推测，翻译后修饰可能抑制或遮蔽了关键免疫原性表位，从而降低了B细胞对细菌表位的识别能力。这可能导致相较于重组蛋白疫苗，该mRNA疫苗仅产生较弱的体液应答且对细菌的防护作用不完全。</p>
+
+            <p>众所周知，真核细胞与原核细胞在翻译后加工过程也存在显著差异。因此，宿主细胞表达的细菌蛋白可能因翻译后修饰和共翻译修饰而在结构上不同于天然细菌蛋白，其中糖基化是最典型的例子。宿主添加的聚糖可能导致结构差异，或通过空间位阻阻碍B细胞表位对细菌抗原的识别。聚糖还能为可能参与刺激性和抑制性免疫通路的受体产生新的靶位点。通过使用NetNGlyc和NetOGlyc等生物信息学工具，可预测细菌疫苗靶标中潜在的糖基化位点，并据此设计突变抗原。在小鼠免疫实验中，与天然细菌蛋白相比，糖基化削弱了体液免疫甚至细胞免疫。</p>
+
+            <h2>优化mRNA构建体设计以增强细胞免疫应答</h2>
+            <p>病原体特异性抗体的产生通常被认为是疾病保护的关键；然而，细胞免疫同样发挥着至关重要的作用，特别是在结核分枝杆菌（MTB）等胞内细菌感染中。CD4+ 和 CD8+ 细胞毒性T淋巴细胞（CTLs）均可通过抗原识别直接杀伤感染细胞，从而参与宿主防御。活化的CD4+ 和 CD8+ T细胞还能产生干扰素-γ（IFNγ）等细胞因子，可刺激（受感染的）巨噬细胞诱发自噬，并通过细胞内一氧化氮的产生导致细菌感染的巨噬细胞发生凋亡。</p>
+
+            <p>当哺乳动物细胞被无信号肽（SP）的mRNA疫苗转染时，编码蛋白在胞质中表达，该部位的蛋白质通常会被泛素-蛋白酶体系统降解。对于在病原体感染过程中通常会被分泌或注入宿主细胞的细菌毒力因子而言，其对真核宿主细胞环境的适应性可能导致此类编码抗原获得相对稳定的表达。而其他细菌蛋白（尤其是细胞壁或膜蛋白）可能因错误折叠等因素在哺乳动物细胞中快速降解。这种不稳定性表达和快速的蛋白酶体降解可能有利于MHC-I类分子递呈并激活CD8+ T细胞应答，因为缺陷核糖体产物、短寿命蛋白及非经典蛋白构成了免疫肽组的重要部分。</p>
+
+            <p>由于CD4+和CD8+ T细胞可协同产生抗胞内细菌免疫，应选择能够最优靶向并同时激活这两种T细胞亚群的抗原及疫苗设计方案。mRNA编码的抗原在细胞质中表达，预计其主要通过MHC-I复合物呈递。然而研究表明，MHC-II分子亦可在特殊的内体-溶酶体区室内获取内源性合成抗原。因此，在病毒疫苗设计背景下，研究人员已评估将抗原与人类白细胞抗原（HLA）II类分选信号构建融合蛋白，以引导胞质抗原进入这些区室。具体而言，这些HLA II类分选信号包含存在于内体或溶酶体跨膜蛋白胞质结构域的内吞分选基序，可被运输组件识别并引导蛋白质进入内体-溶酶体区室。典型实例如源自跨膜蛋白恒定链（Ii）的分选信号——该信号能稳定并调控MHC-II分子的胞内运输；以及存在于内体-溶酶体区室的溶酶体相关膜蛋白（LAMP1）。值得注意的是，LAMP1介导的胞质蛋白向内体-溶酶体区室运输依赖于其向内质网的转运，这一过程通过在设计构建体中包含LAMP1信号肽（SP）来实现（图2）。</p>
+
+            <div class="figure-container">
+                <img src="post_tex/2/Figure2.png" alt="不同信号肽与转运基序的引入可引导核糖体翻译后mRNA编码抗原的细胞内加工与定位过程">
+                <p class="figure-caption">图2：不同信号肽与转运基序的引入可引导核糖体翻译后mRNA编码抗原的细胞内加工与定位过程</p>
+            </div>
+
+            <p>胞质蛋白通过泛素-蛋白酶体途径或替代性泛素依赖途径靶向降解（1）。随后，蛋白质片段经抗原加工相关转运体（TAP）转运后，在内质网内被装载至MHC-I复合物，继而转运至细胞表面激活CD8+ T细胞。具有信号肽的蛋白质被导入内质网并进入分泌途径（2）。该过程中蛋白质发生构象变化，并可能经历翻译后修饰（包括糖基化）。源自恒定链、LAMP1、MHC-I或其他来源的运输基序所连接的蛋白质会被引导进入内体-溶酶体区室（3）。降解后的蛋白质片段可被装载至MHC-I和MHC-II复合物，分别递呈至细胞表面刺激CD8+ T细胞和CD4+ T细胞。与Fc片段连接的蛋白质可通过Fc介导的内吞作用被重新内化，进入内溶酶体区室降解后装载至MHC-II分子，最终转运至细胞表面主要激活CD4+ T细胞（4）。</p>
+
+            <p>对于不同靶向细菌及预期免疫应答，可通过多种mRNA构建体设计策略调控特定胞内通路，以引导适应性免疫反应，其成效各有差异（图3）。这些方法有助于根据细菌疾病所需的保护相关性来定制针对mRNA疫苗的适应性免疫反应，但也存在某些缺点。IgG-Fc指免疫球蛋白G抗体的可结晶片段。UTR指非翻译区。</p>
+
+            <div class="figure-container">
+                <img src="post_tex/2/Figure3.png" alt="优化mRNA构建体设计以增强蛋白质表达或引导表达抗原向特定抗原呈递通路定向递送">
+                <p class="figure-caption">图3：优化mRNA构建体设计以增强蛋白质表达或引导表达抗原向特定抗原呈递通路定向递送</p>
+            </div>
+
+            <h2>细菌mRNA疫苗研发现状</h2>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <caption><strong>已完成临床前评估或正处于临床评估阶段的细菌mRNA疫苗概览</strong></caption>
+                    <thead>
+                        <tr>
+                            <th>目标细菌病原体</th>
+                            <th>细胞内或细胞外</th>
+                            <th>RNA类型</th>
+                            <th>靶抗原和RNA构建</th>
+                            <th>配方</th>
+                            <th>给药途径</th>
+                            <th>发布日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="7" style="text-align: center; font-weight: bold;">开发中</td></tr>
+                        <tr><td><em>M. tuberculosis</em></td><td>兼性胞内</td><td>未修饰</td><td><strong>MPB83</strong></td><td>裸露</td><td>IM</td><td>2004</td></tr>
+                        <tr><td><em>M. tuberculosis</em></td><td>兼性胞内</td><td>未修饰</td><td><strong>Hsp65</strong></td><td>裸露</td><td>IN</td><td>2010</td></tr>
+                        <tr><td><em>S. pyogenes</em> 和 <em>S. agalactiae</em></td><td>胞外</td><td>saRNA</td><td><strong>LLOdm</strong> 或鼠Ig κ ss + <strong>BP-2a</strong></td><td>阳离子纳米乳液</td><td>IM</td><td>2017</td></tr>
+                        <tr><td><em>S. typhimurium</em></td><td>兼性胞内</td><td>核苷修饰</td><td>人Ig κ ss + 抗原 (<strong>Mig14</strong>, <strong>OmpC/F/L</strong>, <strong>SlyB</strong>, <strong>SseB</strong>, <strong>CpoB</strong> 或 <strong>T1855</strong>)</td><td>LNP</td><td>IM</td><td>2018</td></tr>
+                        <tr><td><em>Chlamydia trachomatis</em></td><td>专性胞内</td><td>saRNAs</td><td><strong>MOMP</strong></td><td>含R848、3M-052或Poly I:C佐剂的CAFs</td><td>IM</td><td>2019</td></tr>
+                        <tr><td><em>Staphylococcus aureus</em></td><td>胞外</td><td>核苷修饰</td><td>h-tPA ss + <strong>AdsA</strong> + MITD</td><td>mRNA-InstantFECT纳米复合物</td><td>IM vs SC</td><td>2020</td></tr>
+                        <tr><td><em>B. burgdorferi</em></td><td>胞外</td><td>核苷修饰</td><td><strong>19ISP</strong> (源自 <em>Ixodes scapularis</em>)</td><td>LNP</td><td>ID</td><td>2021</td></tr>
+                        <tr><td><em>L. monocytogenes</em></td><td>兼性胞内</td><td>核苷修饰</td><td><strong>LLO_E2649</strong>, <strong>276</strong>, <strong>042</strong>, <strong>1501</strong>, <strong>2272</strong>, <strong>1065</strong> 或 <strong>LLO_E262K</strong></td><td>α-半乳糖基神经酰胺佐剂阳离子脂质复合物</td><td>IV</td><td>2022</td></tr>
+                        <tr><td><em>M. tuberculosis</em> / <em>Mycobacterium avium</em></td><td>兼性胞内</td><td>saRNA</td><td><strong>esV</strong>、<strong>RpfD</strong>、<strong>PE60</strong> 和 <strong>Ag85B</strong> 的融合蛋白</td><td>LION</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>Y. pestis</em></td><td>兼性胞内</td><td>核苷修饰</td><td>ss缺失或人Ig κ链ss + <strong>caf1</strong> 和/或人IgG-Fc结构域</td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>P. aeruginosa</em></td><td>胞外</td><td>核苷修饰</td><td><strong>OprF-I</strong> 或 h-tPA ss <strong>PcrV</strong></td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>P. aeruginosa</em></td><td>胞外</td><td>核苷修饰</td><td>h-tPA ss <strong>PcrV</strong></td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>B. burgdorferi</em></td><td>胞外</td><td>核苷修饰</td><td><strong>OspA</strong></td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>Y. pestis</em></td><td>兼性胞内</td><td>saRNA</td><td><strong>F1</strong> 和 <strong>V抗原</strong></td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>Rhodococcus equi</em></td><td>兼性胞内</td><td>核苷修饰</td><td>马特异性ss <strong>VapA</strong></td><td>LNP</td><td>IM vs IN (雾化)</td><td>2023</td></tr>
+                        <tr><td><em>L. monocytogenes</em></td><td>兼性胞内</td><td>核苷修饰</td><td><strong>LLO_E2649</strong></td><td>LNP</td><td>IM</td><td>2024</td></tr>
+                        <tr><td><em>B. pertussis</em></td><td>胞外</td><td>核苷修饰</td><td>哺乳动物Ig κ链ss或牛催乳素ss或天然ss + 抗原 (<strong>PTX-S1</strong>, <strong>FHA3</strong>, <strong>FIM2/3</strong>, <strong>PRN</strong>, <strong>DT</strong>, <strong>TT</strong>, <strong>RTX</strong>, <strong>TCFA</strong>, <strong>SPHB1</strong> 和/或 <strong>BRKA</strong>)</td><td>LNP</td><td>IM</td><td>2024</td></tr>
+                        <tr><td><em>Clostridioides difficile</em></td><td>专性厌氧和孢子形成</td><td>核苷修饰</td><td>IL-2 ss <strong>TcdA</strong>, <strong>TcdB</strong>, <strong>PEP1</strong> 和 <strong>CdeM</strong></td><td>LNP</td><td>IM</td><td>2024</td></tr>
+                        <tr><td colspan="7" style="text-align: center; font-weight: bold;">临床评估中</td></tr>
+                        <tr><td><em>B. burgdorferi</em></td><td>胞外</td><td>核苷修饰</td><td><strong>OspA SR1</strong> 或 <strong>OspA SR1-7</strong></td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                        <tr><td><em>M. tuberculosis</em></td><td>兼性胞内</td><td>未修饰 vs 核苷修饰</td><td>多价未披露</td><td>LNP</td><td>IM</td><td>2023</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>表注：</strong>目标抗原以粗体标示。19ISP：19种肩突硬蜱唾液蛋白；AdsA：腺苷合成酶A；Ag85B：抗原85B；BP-2a：菌毛2a骨架蛋白；BRKA：BrkA自转运蛋白；CAF：阳离子佐剂制剂；CdeM：外孢子膜形态发生蛋白CdeM；Cp-caf1：环化置换的F1荚膜抗原；CpoB：细胞分裂协调蛋白；DT：白喉毒素；esV：核酸外切酶V蛋白；FHA3：叉头相关结构域蛋白3；FIM2/3：外膜聚集蛋白FimD2/3；Hsp65：热休克蛋白65；h-tPA：人组织型纤溶酶原激活剂；ID：皮内注射；IgG-Fc：免疫球蛋白G可结晶片段；IL-2：白细胞介素2；IM：肌肉注射；IN：鼻内给药；IV：静脉注射；LION：脂质无机纳米颗粒；LLO：李斯特菌溶血素O；LMON：单核细胞增生李斯特菌；LLOdm：双突变链球菌溶血素O；MITD：MHC I类运输结构域；Mig14：迁移抑制基因14；MOMP：主要外膜蛋白；MPB83：结核分枝杆菌蛋白83；Omp：外膜蛋白；OprF-I：外膜孔蛋白F；PcrV：铜绿假单胞菌V抗原；PE60：脯氨酸-脯氨酸-谷氨酸蛋白60；PEP1：脯氨酸-脯氨酸内肽酶1；PRN：百日咳自转运蛋白；PTX-S1：百日咳毒素S1亚基；RpfD：复苏促进因子；RTX：毒素重复序列外蛋白；saRNA：自扩增RNA；SC：皮下注射；SPHB1：自转运枯草杆菌蛋白酶样蛋白酶；SlyB：外膜脂蛋白SlyB；SR：血清型；ss：分泌信号；SseB：沙门氏菌分泌效应蛋白B；TcdA：N-乙酰葡萄糖胺转移酶TcdA；TcdB：葡萄糖基转移酶TcdB；TCFA：自转运蛋白TcfA；VapA：毒力相关蛋白A；TT：破伤风类毒素。</p>
+
+            <p>虽然众多研究已探索mRNA疫苗针对病毒靶点的应用，但是仅有有限的文章表明了mRNA疫苗对细菌感染的保护效力。上表总结了目前已开发的细菌mRNA疫苗。相比之下，仅有少数疫苗进入临床评估阶段。</p>
+
+            <h2>结论与展望</h2>
+            <p>工业界和学术界的近期研究显示，细菌性疾病已成为mRNA疫苗开发的理想靶标，有望为传统细菌疫苗和抗生素提供替代方案。除已证实在COVID-19中的有效性外，mRNA疫苗在设计灵活性、生产速度与可扩展性方面具有显著优势。但本文也预见到，在开发抗细菌mRNA疫苗以与其他疫苗平台竞争时，仍需克服若干特定挑战。</p>
+
+            <p>如何为细菌疫苗选择合适的抗原是一项艰巨的任务。近年来实验和计算方法的近期技术进展有效推动了细菌抗原发现，但抗原优先排序以进行临床前验证仍将是关键步骤。值得探讨的是，与亚单位平台相比，mRNA疫苗生产的快速性和灵活性是否允许对不同抗原组合或融合构建体进行更多功能性筛选。</p>
+
+            <p>细菌mRNA疫苗的抗原性和免疫原性受到转染宿主内编码抗原的表达、加工和转运过程的显著影响，目前已经发展多种方法优化哺乳动物细胞中细菌蛋白表达和/或呈递。比如，使用运输和分泌信号，以及通过生物信息学工具预测和克服宿主糖基化作用。但迄今结果表明，这些方法对蛋白质稳定性、细胞内运输和抗原呈递的影响相当不可预测，可能需要对每个特定抗原进行专门验证，从而进一步阻碍抗原筛选。此外，由于许多细菌疾病的免疫保护相关性尚未明确，使得优化mRNA构建体设计的预测更为复杂。</p>
+
+            <p>未来，通过整合多组学技术的系统生物学进展为深入表征保护性免疫反应表现出较好前景，结合快速生成和生产多种mRNA构建体的能力，该方法可用于建立特定细菌的保护性"靶向免疫图谱"，进而指导未来针对细菌病原体的mRNA疫苗设计。</p>
+
+            <p>部分细菌如分枝杆菌、志贺氏菌或沙门氏菌等重要人类病原体侵入细胞后可采取液泡或胞质内生存策略，然而这种选择如何影响有效免疫应答的下游诱导，以及对mRNA疫苗设计的潜在意义目前尚不明确。对于毒力效应蛋白（这类蛋白常被细菌分泌或注入宿主细胞质），后续研究应阐明如何通过mRNA疫苗编码此类毒力因子以激发最佳保护性应答。</p>
+
+            <p>相较于亚单位疫苗平台，mRNA疫苗的一个关键优势在于能同步编码多种细菌抗原。目前处于临床试验阶段的抗结核分枝杆菌和伯氏疏螺旋体mRNA疫苗均采用多价制剂，包含多种抗原或血清型。现有数据尚不能明确融合构建体是否更具优势，以及免疫显性（特定表位引发更强免疫应答的现象）如何影响这些多价疫苗接种策略。另一挑战在于，与当前编码单一抗原的COVID-19 mRNA疫苗相比，此类疫苗可能需要更高剂量才能实现足够免疫原性。同时剂量问题也使mRNA疫苗与其他疫苗平台的客观比较复杂化，因为准确界定mRNA疫苗接种后的蛋白表达量存在困难。</p>
+
+            <p>由此引申的核心疑问是：相较于现行金标准疫苗，mRNA疫苗是否具有显著优势？根据BioNTech的专利信息，临床前研究中其两种mRNA制剂未显示优于卡介苗的效果。此外，在卡介苗初免后加强接种mRNA疫苗可能产生的保护作用亦未见报道。</p>
+
+            <p>鉴于抗细菌mRNA疫苗尚处于发展初期，当前基于mRNA-LNP技术的疫苗能否诱导有效持久的抗细菌免疫保护仍存争议。COVID-19 mRNA疫苗在早期评估阶段表现出高滴度中和抗体和卓越疫苗效力，但多项研究显示其体液免疫与保护效力在六个月内快速衰减。不过有研究表明，mRNA疫苗诱导的T细胞应答具有更长持久性，可能维持数年。高风险人群（如老年人与免疫缺陷者）对基础接种的应答较弱，需加强接种才能获得足够保护。外需深入研究mRNA疫苗对先天免疫细胞的影响。减毒疫苗（如卡介苗或伤寒沙门氏菌TY21a株）以诱导先天免疫记忆（即训练免疫）著称，其机制在于骨髓中髓系祖细胞的表观遗传与转录重编程，从而增强对同源/异源病原体的先天免疫应答。现有研究表明，尽管mRNA疫苗接种会引起循环单核细胞中先天免疫与抗病毒基因特征的转录上调，但尚无证据表明COVID-19 mRNA疫苗能诱导长效训练免疫或有益非特异性效应。</p>
+
+            <p>虽然mRNA疫苗具有产生强效适应性免疫激活的内在佐剂活性，但本文认为可考虑通过添加免疫佐剂来增强或拓宽先天免疫激活。例如利用LNP递送系统装载细菌糖脂抗原。</p>
+
+            <p>抗菌性mRNA疫苗未来面临的另一重大挑战是疫苗分配不公。抗菌素耐药性负担在资源匮乏国家最为严重。由于社会经济差异，这些国家长期遭受疫苗短缺的不成比例影响。例如模型研究显示，在COVID-19大流行期间，中低收入国家超过50%的死亡病例可归因于疫苗分配不公。mRNA疫苗虽能快速大规模生产，但在全球范围内分配不均，其限制因素包括需要（超）低温冷链储运且成本高于其他疫苗平台，但目前已有诸多突破冷链限制的尝试。</p>
+
+            <p>随着抗菌素耐药性加剧，细菌疫苗在高收入国家的重要性也将提升。针对多重耐药医院获得性感染（如高毒力耐药的ESKAPE病原体）的mRNA疫苗或将成为重点，用于保护免疫功能低下或手术患者在整个住院期间的感染风险。该技术具备定制化潜力——可针对医院内流行菌株设计疫苗，甚至实现个体化接种，其原理类似于编码新抗原的癌症疫苗。</p>
+
+            <p>总体而言，mRNA疫苗的灵活性与快速研发特性，结合日益完善的公平可及生产分配体系，昭示其广阔前景——特别是在应对新发传染性疾病（包括细菌性病原体）的防控准备方面。目前首批抗细菌mRNA疫苗已进入临床评估阶段，更多候选疫苗处于临床前研发中后期。这些研究将填补mRNA疫苗设计的知识空白，指导优化编码细菌抗原的表达与呈递方式。</p>
+
+            <div class="pdf-download-section">
+                <div class="pdf-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <p class="pdf-description">完整的学术内容和详细图表请下载PDF版本</p>
+                <a href="post_tex/2/2.pdf" class="pdf-download-btn" download>
+                    <i class="fas fa-download"></i>
+                    下载完整PDF版本
+                </a>
+            </div>
+        </div>
+
+        <!-- 文章导航 -->
+        <nav class="post-navigation">
+            <a href="post7.html" class="nav-link prev-post">
+                <i class="fas fa-arrow-left"></i>
+                <span>上一篇</span>
+            </a>
+            <a href="index.html" class="nav-link back-link">
+                <i class="fas fa-th"></i>
+                <span>返回博客列表</span>
+            </a>
+            <a href="#" class="nav-link next-post disabled">
+                <span>下一篇</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </nav>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 陈家辉. 保留所有权利.</p>
+            <p>本网站使用静态技术构建，专注于学术交流与知识分享.</p>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
